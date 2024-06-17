@@ -1,5 +1,7 @@
 # AEDs II - Algoritmos e Estruturas de Dados 🚀
 - Estudos Realizados durante o semestre
+- Provas
+- Trabalhos
 
 ## Tópicos Abordados
 - **Algoritmos de Ordenação**: Bolha, Countingsort, Radixsort, Heapsort, Quicksort, Shellsort, Mergesort, Insertionsort
