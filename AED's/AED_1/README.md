@@ -1,2 +1,2 @@
 # AED_1 📘
-Trabalhos / Exercícios / Aulas 
+Trabalhos / Aulas 
