@@ -1,0 +1,2 @@
+1;Harry potter;Romance;250.00;Disponivel
+2;Jogos vorazes;Acao;125.00;Disponivel

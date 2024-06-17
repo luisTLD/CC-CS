@@ -1,0 +1,84 @@
+
+Lista_00 - v.0.0 - 01/mm/20aa
+Matricula: 999999 Nome: xxx yyy zzz
+Opcoes:
+ 0 - parar
+ 1 - metodo 01   2 - metodo 02
+ 3 - metodo 03   4 - metodo 04
+ 5 - metodo 05   6 - metodo 06
+ 7 - metodo 07   8 - metodo 08
+ 9 - metodo 09  10 - metodo 10
+
+Qual a sua opcao? 1
+Metodo01
+Apertar ENTER para continuar.
+
+Lista_00 - v.0.0 - 01/mm/20aa
+Matricula: 999999 Nome: xxx yyy zzz
+Opcoes:
+ 0 - parar
+ 1 - metodo 01   2 - metodo 02
+ 3 - metodo 03   4 - metodo 04
+ 5 - metodo 05   6 - metodo 06
+ 7 - metodo 07   8 - metodo 08
+ 9 - metodo 09  10 - metodo 10
+
+Qual a sua opcao? 3
+Metodo03
+Apertar ENTER para continuar.
+
+Lista_00 - v.0.0 - 01/mm/20aa
+Matricula: 999999 Nome: xxx yyy zzz
+Opcoes:
+ 0 - parar
+ 1 - metodo 01   2 - metodo 02
+ 3 - metodo 03   4 - metodo 04
+ 5 - metodo 05   6 - metodo 06
+ 7 - metodo 07   8 - metodo 08
+ 9 - metodo 09  10 - metodo 10
+
+Qual a sua opcao? 5
+Metodo05
+Apertar ENTER para continuar.
+
+Lista_00 - v.0.0 - 01/mm/20aa
+Matricula: 999999 Nome: xxx yyy zzz
+Opcoes:
+ 0 - parar
+ 1 - metodo 01   2 - metodo 02
+ 3 - metodo 03   4 - metodo 04
+ 5 - metodo 05   6 - metodo 06
+ 7 - metodo 07   8 - metodo 08
+ 9 - metodo 09  10 - metodo 10
+
+Qual a sua opcao? 7
+Metodo07
+Apertar ENTER para continuar.
+
+Lista_00 - v.0.0 - 01/mm/20aa
+Matricula: 999999 Nome: xxx yyy zzz
+Opcoes:
+ 0 - parar
+ 1 - metodo 01   2 - metodo 02
+ 3 - metodo 03   4 - metodo 04
+ 5 - metodo 05   6 - metodo 06
+ 7 - metodo 07   8 - metodo 08
+ 9 - metodo 09  10 - metodo 10
+
+Qual a sua opcao? 9
+Metodo09
+Apertar ENTER para continuar.
+
+Lista_00 - v.0.0 - 01/mm/20aa
+Matricula: 999999 Nome: xxx yyy zzz
+Opcoes:
+ 0 - parar
+ 1 - metodo 01   2 - metodo 02
+ 3 - metodo 03   4 - metodo 04
+ 5 - metodo 05   6 - metodo 06
+ 7 - metodo 07   8 - metodo 08
+ 9 - metodo 09  10 - metodo 10
+
+Qual a sua opcao? 0
+Apertar ENTER para terminar.
+

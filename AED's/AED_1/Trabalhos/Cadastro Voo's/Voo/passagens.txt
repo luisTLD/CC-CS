@@ -1,0 +1,4 @@
+2
+2
+1;ADG;MMG;belo horizonte;juiz de fora;12/12/2023;14:40;16:45;600.75;100
+2;MMB;FGH;belo horizonte;miami;15/04/2024;21:00;08:00;200;100
