@@ -1,3 +1,3 @@
 # Primeiros Trabalhos 📁
-- **Lógica de Programação**: Refinando habilidades fundamentais.
-- **Manipulação de Arquivos**: Técnicas basicas para gestão de dados.
+- **Lógica de Programação**: Habilidades fundamentais
+- **Manipulação de Dados**: Técnicas basicas para gerenciar arquivos
