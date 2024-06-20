@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://wallpapers.com/images/featured/math-zarpq292tmb3whun.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+#zerar{
+    border: solid 1px;
+    padding: 1vh 1vh 1vh 1vh;
+    margin-right: 2.4px;
+    user-select: none;
+}
+
+#zerar:hover{
+    background-color:rgb(211, 211, 211);
+}
+
+main{
+    height: 100vh;
+}
+
+.autor{
+    text-align: center;
+    color: white;
+}
+
+.calculos{
+    position: relative;
+    width: 45vh;
+    height: 75vh;
+    border-radius: 20px;
+    border: solid 4px;
+    padding: 1vh;
+    background-color:rgba(245, 245, 245, 0.9);
+    top: 46%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+    overflow: auto;
+}
+
+.calculadora{
+    padding: 1vh;
+    border: solid 4px;
+    border-radius: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: rgba(245, 245, 245, 0.9);
+}
+
+.salvar p {
+    margin-top: 10px;
+}
+
+.titulo{
+    margin: 2px 0 2vh 0;
+}
+
+.entrada{
+    margin: 0 0 2vh 0;
+    border: solid 1px;
+    padding: 2vh 1vh 2vh 1vh;
+    border-radius: 10px;
+    text-align: right;
+    font-size: 26px;
+}
+
+.linha{
+    display: flex;
+    cursor: default;
+}
+
+.inicio{
+    border: solid 1px;
+    padding: 1vh 1vh 1vh 1vh;
+    margin-left: 2.4px;
+    user-select: none;
+}
+
+.inicio:hover{
+    background-color:rgb(211, 211, 211);
+}
+
+.fim{
+    margin-left: auto;
+    border: solid 1px;
+    padding: 1vh 1vh 1vh 1vh;
+    margin-right: 2.4px;
+    user-select: none;
+}
+
+.fim:hover{
+    background-color:rgb(211, 211, 211);
+}
+
+.calculadora button{
+    width: 10vh;
+    height: 10vh;
+    font-size: 36px;
+}
+
+button:hover{
+    background-color:rgb(211, 211, 211);
+}
+
+.calculos{
+    display: none;
+}
