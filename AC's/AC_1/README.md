@@ -1,4 +1,4 @@
-# Materia abordada 📖
+# Assuntos abordados 📖
 ## Circuitos Lógicos:
 - Portas lógicas
 - Contadores
