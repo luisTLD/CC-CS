@@ -1,2 +1,3 @@
 ## Matemática 🧠
-- Exercícios e exemplos relacionados a cálculo e geometria analítica.
+- Materias abordadas em aula
+
