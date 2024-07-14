@@ -1,2 +1,2 @@
 # Arquitetura de Computadores 💾
-- Compilação de estudos, trabalhos e projetos na área.
+- Estudos, trabalhos e projetos na área.
