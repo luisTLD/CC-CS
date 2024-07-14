@@ -1,3 +1,3 @@
-## Matemática 🧠
-- Materias abordadas em aula
+# Matemática 🧠
+- Materias abordadas em aula.
 
