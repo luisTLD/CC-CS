@@ -1,0 +1,30 @@
+cff-version: 1.0.1
+message: Please cite this software using these metadata.
+title: PlanejaPrato
+authors:
+  - family-names: Pimenta Almeida
+    given-names: Edson
+  - family-names: Nunes
+    given-names: Eduardo
+  - family-names: Toledo
+    given-names: Luis
+  - family-names: Lima
+    given-names: Rafael 
+  - family-names: Alves
+    given-names: Samuel 
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Cardoso Brandao
+    given-names: Wladmir
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Paulo
+    given-names: Marco
+keywords:
+  - Receitas diversas
+  - Sistema inteligente
+  - Comprar receitas
+repository-code: https://github.com/ICEI-PUC-Minas-CC-TI/plmg-cc-ti2-2024-1-g20-planejaprato.git
+license: CC-BY-4.0
+version: 1.0.0
+date-released: 2024-06-21
