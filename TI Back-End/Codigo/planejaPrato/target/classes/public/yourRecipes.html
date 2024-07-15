@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planeja Prato</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;1,200;1,300;1,600&display=swap"
+    rel="stylesheet">
+  <link href="css/yourRecipes.css" rel="stylesheet">
+  <link href="css/cart.css" rel="stylesheet">
+
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+
+<body>
+  <!-- <header> -->
+  <!-- Fetch no header -->
+  <!-- <div id="headerCopy"></div> -->
+  <!-- </header> -->
+  <header>
+
+    <div class="container">
+      <header
+        class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+        <div class="col-md-3 mb-2 mb-md-0">
+          <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
+            <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap">
+              <use xlink:href="#bootstrap"></use>
+            </svg>
+          </a>
+        </div>
+
+        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+
+          <form action="/home" method="get" id="recipeForm">
+            <button type="submit" class="nav-link px-2">Home</button>
+          </form>
+          <form action="/features" method="get" id="recipeForm">
+            <button type="submit" class="nav-link px-2">Pesquisar</button>
+          </form>
+          <!-- <li><a href="featureRecipes.html" class="nav-link px-2">Features</a></li> -->
+          <form action="/yourRecipes" method="get" id="recipeForm">
+            <button type="submit" class="nav-link px-2">Suas receitas</button>
+          </form>
+
+          <!-- <li><a href="#" class="nav-link px-2" style="margin-left: 16vh;">Seu Carrinho</a></li> -->
+          <!-- Cart icon -->
+        </ul>
+        <div class="col-md-3 text-end">
+
+          <NomeUsuario>
+
+        </div>
+      </header>
+    </div>
+
+    <!-- Fetch no header -->
+    <!-- <div id="headerCopy"></div> -->
+
+  </header>
+
+
+  <main>
+
+      <div class="firstStage">
+        <div class="featureText">
+
+          <!-- Inicio com botão para cadastrar nova receita -->
+          <h1 class="display-1">Inspire Outros Chefs</h1>
+          <button type="button" data-bs-toggle="modal" data-bs-target="#createRecipeModal" class="btn btn-light"
+            style="margin-top: 3vh; font-size: 24px;">Cadastre sua Receita</button>
+
+          <div id="createRecipeCopy"></div>
+
+        </div>
+      </div>
+
+
+
+      <div class="secondStage" style="padding-top: 6vh;">
+        <div class="firstBoxFormat" style="margin: 0 2vh 0 2vh;">
+
+          <h1 class="display-1" style="text-align: center;">Suas Receitas</h1>
+
+          <div class="grid-container" style="margin-top: 2vh;">
+
+            <!-- cada div Card é uma caixa com uma receita cadastrada e com botão para abrir o modal da receita recipeModal-->
+            <!-- <div class="card" style="width: 18rem; margin: 10px;">
+            <img src="img/r8.png" class="card-img-top" alt=".." style="height: 16rem; width: 100%;">
+            <div class="card-body">
+              <h5 class="card-title">Nome da receita</h5>
+              <p class="card-text">Seu modo de preparo</p>
+              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#recipeModal">View Recipe</button>
+            </div>
+          </div> -->
+
+            <CaixaSuasReceitas>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Receitas Diversas -->
+      <!-- <div class="thirdStage" style="padding-top: 4vh;">
+        <div class="secondBoxFormat">
+
+          <h1 class="display-1" style="text-align: center;">Receitas Favoritadas</h1>
+
+        </div>
+      </div>
+    </div> -->
+
+      <footer>
+
+        <div class="container py-3 my-4 border-top">
+          <div class="row d-flex flex-wrap justify-content-between align-items-center">
+            <p class="col-md-4 mb-0 text-body-secondary">© 2024 Company, Inc</p>
+
+            <ul class="nav col-md-4 justify-content-end">
+              <li class="nav-item"><a href="index.html" class="nav-link px-2 text-body-secondary">Home</a></li>
+              <form action="/features" method="get" id="recipeForm">
+                <button type="submit" class="nav-link px-2 text-body-secondary">Pesquisar</button>
+              </form>
+
+              <!-- <li class="nav-item"><a href="featureRecipes.html" class="nav-link px-2 text-body-secondary">Features</a></li> -->
+            </ul>
+          </div>
+        </div>
+
+      </footer>
+
+  </main>
+
+  <createModalIngredientes>
+
+    <script src="js/rolagemSuave.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"></script>
+
+</body>
+
+</html>

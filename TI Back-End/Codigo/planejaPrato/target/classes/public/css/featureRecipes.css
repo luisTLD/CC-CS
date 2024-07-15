@@ -1,0 +1,60 @@
+
+
+/* CSS para a imagem de fundo da primeira parte */
+main .firstStage {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/bgTest.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 90vh;
+    width: 100%;
+    padding-bottom: 10px;
+    position: relative;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+/* Texto principal do começo e caixa de pesquisa  */
+main .featureText {
+    color: white;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 8vh;
+    height: 100%;
+}
+
+
+/* CSS para as Receitas Destaques */
+main .secondStage{
+    background-color: #dbdbdb;
+    height: auto;
+    padding-bottom: 8vh; 
+}
+
+/* div dentro da img */
+main .firstBoxFormat {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+
+
+
+
+/* CSS para as receitas diversas */
+main .thirdStage{
+    background-color: #abb8b9;
+    height: auto;
+    padding-bottom: 8vh;
+}
+
+main .secondBoxFormat {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
