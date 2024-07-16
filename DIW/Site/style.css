@@ -1,0 +1,135 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header{
+    margin: 2rem 5% 0 5%;
+}
+
+footer{
+    margin-top: 2%;
+}
+
+.destaque h5{
+    margin: 2rem 5% 0 5%;
+}
+
+hr{
+    border: 2px solid black;
+    margin-top: 0;
+    margin: 0 5% 0 5%;
+}
+
+.esquerda{
+    display: inline-block;
+}
+
+.esquerda h1{
+    color: black;
+}
+
+.direita{
+    display: inline;
+    float: right;
+}
+
+.direita h3{
+    display: inline-block;
+    margin: 0 0 0 2rem;
+}
+
+.carrossel{
+    margin: 2rem 6% 0 6%;
+    background-color: #cfe2ff;
+    padding: 1%;
+    border-radius: 25px 0 25px 0;
+}
+
+.carrossel img{
+    width: 100%;
+    max-height: 35rem;
+    border-radius: 25px 0 25px 0;
+}
+
+.mapa{
+    margin: 2rem 6% 0 6%;
+    background-color: #cfe2ff;
+    padding: 1%;
+    border-radius: 0 25px 0 25px;
+}
+
+.mapa iframe{
+    width: 100%;
+    max-height: 25rem; 
+    border-radius: 0 25px 0 25px;
+}
+
+.caixa{
+    margin: 2rem 6% 0 6%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.album{
+    padding: 1%;
+    margin-bottom: 2%;
+    background-color: #cfe2ff;
+    display: inline-block;
+    border-radius: 25px 0 25px 0;
+}
+
+.album img{
+    border-radius: 25px 0 25px 0; 
+    margin-bottom: 2%;
+    width: 20rem;
+    height: 12rem;
+}
+
+/* CSS album.html */
+
+.imgdes{
+    display: inline-block;
+    padding: 1%;
+    background-color: #cfe2ff;
+    border-radius: 0 25px 0 25px;
+    margin-right: 5rem;
+}
+
+.texto{
+    display: inline-block;
+    vertical-align: top;
+    max-width: 75rem;
+}
+
+.texto p{
+    display: flex;
+    word-wrap: break-word;
+}
+
+.imgdes img{
+    max-width: 20rem;
+    max-height: 20rem;
+    border-radius: 0 25px 0 25px;
+}
+
+.cont{
+    margin: 2rem 6% 0 6%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.carrossel1{
+    margin: 2rem 6% 0 6%;
+    background-color: #cfe2ff;
+    padding: 1%;
+    border-radius: 25px 0 25px 0;
+}
+
+.carrossel1 img{
+    width: 100%;
+    height: 45rem;
+    border-radius: 25px 0 25px 0;
+}
