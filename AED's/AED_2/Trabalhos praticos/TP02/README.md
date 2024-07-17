@@ -3,7 +3,7 @@
 - Carregar dados na memória principal
 - Ordenar conforme desejado
   
-- ## Criar um arquivo TXT com:
-  - Quantidade de comparações
-  - Movimentações
-  - Tempo gasto pelo código
+## Criar um arquivo TXT com:
+- Quantidade de comparações
+- Movimentações
+- Tempo gasto pelo código
