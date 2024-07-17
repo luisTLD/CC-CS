@@ -1,0 +1,20 @@
+
+// Formatos
+
+'\ooo'  // numero octal       => '\013' = tab vertical
+'\xhh'  // numero hexadecimal => '\xb'  = tab vertical
+'\"'    // aspas duplas
+'\''    // apostrofo ("aspas simples")
+'\?'    // interrogacao
+'\\'    // barra invertida
+'\0'    // caractere nulo (fim de sequencia de caracteres)
+'\b'    // backspace
+'\r'    // retorno ao inicio da linha
+'\f'    // nova linha (FF=FormFeed)
+'\v'    // tabulacao vertical
+'\t'    // tabulacao  (justificar texto a esquerda)
+'\n'    // nova linha
+'\a'    // alerta (sonoro)
+
+// Caracteres especiais
+/*
