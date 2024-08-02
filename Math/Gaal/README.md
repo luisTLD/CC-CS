@@ -1,4 +1,4 @@
-## Tópicos Abordados 📖
+## Tópicos Abordados
 - Vetores
 - Planos
 - Sistemas Lineares
