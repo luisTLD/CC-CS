@@ -1,4 +1,4 @@
-# Assuntos 📖
+# Assuntos
 ## Circuitos Lógicos:
 - Portas lógicas
 - Contadores
