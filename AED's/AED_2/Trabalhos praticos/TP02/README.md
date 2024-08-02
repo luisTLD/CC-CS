@@ -1,4 +1,4 @@
-# Trabalho Prático 2 🧩
+# Trabalho Prático 2
 - Manipulação de arquivo CSV
 - Carregar dados na memória principal
 - Ordenar conforme desejado
