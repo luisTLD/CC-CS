@@ -1,4 +1,4 @@
-# AEDs II - Algoritmos e Estruturas de Dados 🚀
+# AEDs II - Algoritmos e Estruturas de Dados
 - Estudos Realizados durante o semestre
 - Provas
 - Trabalhos
