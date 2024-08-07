@@ -1,5 +1,5 @@
 # Arquitetura de Computadores I 
-# Assuntos
+
 ## Circuitos Lógicos:
 - Portas lógicas
 - Contadores
