@@ -1,7 +1,7 @@
 # Algoritmos e Estruturas de Dados I
 - Aulas e guias
 - Trabalhos de cadastro
-- Exercícios de lógica, como Jogo da Velha e Jogo da Forca.
+- Exercícios de lógica, como Jogo da Velha e Jogo da Forca
 
 ## Tópicos Abordados
 - **Linguagens**: C e C++
