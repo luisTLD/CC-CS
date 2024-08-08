@@ -1,4 +1,4 @@
 # Arquitetura de Computadores II
-- Exercícios Praticos
-- Exercícios Teoricos
+- EP / Exercícios Praticos
+- ET / Exercícios Teoricos
 - Trabalhos
