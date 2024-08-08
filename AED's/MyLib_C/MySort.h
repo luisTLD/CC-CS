@@ -13,6 +13,9 @@ void radixSort(int array[], int length);
 */
 #define MySort_h
 
+// P/ radixSort
+#include <stdlib.h>
+
 // Inverter array
 void reverseArray(int array[], int length);
 
@@ -43,8 +46,8 @@ int getBiggerSon(int array[], int i, int max);
 int hasSon(int i, int max);
 
 // RadixSort -> n
-void radixSort(int array[], int length)
-void radixCountingSort(int array[], int length, int exp)
+void radixSort(int array[], int length);
+void radixCountingSort(int array[], int length, int exp);
 
 
 
