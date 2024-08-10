@@ -9,13 +9,41 @@
 
     // Celula para as estruturas
 
-typedef struct Celula Celula;
-struct Celula
+// Celula Pilha
+typedef struct CelulaP CelulaP;
+// Celula Fila
+typedef struct CelulaF CelulaF;
+// Celula Lista Dupla
+typedef struct CelulaL CelulaL;
+// Celula Arvore
+typedef struct CelulaA CelulaA;
+
+struct CelulaP
 {
     int value;
-    Celula* prox;
-    Celula* ant;
+    CelulaP* prox;
 };
+struct CelulaF
+{
+    int value;
+    CelulaF* prox;
+    CelulaF* ant;
+};
+struct CelulaL
+{
+    int value;
+    CelulaL* prox;
+    CelulaL* ant;
+};
+struct CelulaA
+{
+    int value;
+    int num;
+    CelulaA* dir;
+    CelulaA* esq;
+};
+
+
 
 
     // Pilha
@@ -33,7 +61,7 @@ mostrarPilha(Pilha* pilha);
 typedef struct Pilha Pilha;
 struct Pilha
 {
-    Celula* topo;
+    CelulaP* topo;
 };
 
 // Funcoes
@@ -49,7 +77,7 @@ int contarPilha(Pilha* pilha);
 // Mostra a pilha na ordem que foram inseridos
 void mostrarPilha(Pilha* pilha);
 // Inverter pilha
-void mostrarPilhaCall(Celula* aux);
+void mostrarPilhaCall(CelulaP* aux);
 
 
 Pilha iniciarPilha()
@@ -61,7 +89,7 @@ Pilha iniciarPilha()
 
 void inserirPilha(Pilha* pilha, int x)
 {
-    Celula* tmp = (Celula*)malloc(1 * sizeof(Celula));
+    CelulaP* tmp = (CelulaP*)malloc(1 * sizeof(CelulaP));
     tmp->value = x;
     tmp->prox = pilha->topo;
     pilha->topo = tmp;
@@ -73,7 +101,7 @@ int removerPilha(Pilha* pilha)
     int resp = 0;
     if (pilha->topo != NULL)
     {
-        Celula* tmp = pilha->topo;
+        CelulaP* tmp = pilha->topo;
         resp = tmp->value;
         pilha->topo = tmp->prox;
         tmp->prox = NULL;
@@ -90,7 +118,7 @@ int removerPilha(Pilha* pilha)
 
 int contarPilha(Pilha* pilha)
 {
-    Celula* aux = pilha->topo;
+    CelulaP* aux = pilha->topo;
 
     int sum = 0;
     while(aux != NULL){
@@ -106,11 +134,11 @@ void mostrarPilha(Pilha* pilha)
     if (pilha->topo == NULL) printf("Pilha vazia");
     else
     {
-        Celula* aux = pilha->topo;
+        CelulaP* aux = pilha->topo;
         mostrarPilhaCall(aux);
     }
 }
-void mostrarPilhaCall(Celula* aux)
+void mostrarPilhaCall(CelulaP* aux)
 {
     if (aux->prox != NULL) mostrarPilhaCall(aux->prox);
     printf("%d ", aux->value);
@@ -142,9 +170,10 @@ removerFila(Fila* fila);
 ContarFila(Fila* fila);
 mostrarFila(Fila* fila);
 */
-struct Fila{
-    Celula* primeiro;
-    Celula* ultimo;
+struct Fila
+{
+    CelulaF* primeiro;
+    CelulaF* ultimo;
 };
 
 
@@ -163,7 +192,7 @@ void mostrarFila(Fila* fila);
 Fila iniciarFila()
 {
     Fila tmp;
-    tmp.primeiro = (Celula*)malloc(1 * sizeof(Celula));
+    tmp.primeiro = (CelulaF*)malloc(1 * sizeof(CelulaF));
     tmp.ultimo = tmp.primeiro;
     tmp.primeiro->prox = NULL;
 
@@ -172,7 +201,7 @@ Fila iniciarFila()
 
 void inserirFila(Fila* fila, int x)
 {
-    Celula* aux = (Celula*)malloc(1 * sizeof(Celula));
+    CelulaF* aux = (CelulaF*)malloc(1 * sizeof(CelulaF));
     aux->value = x;
     aux->prox = NULL;
     fila->ultimo->prox = aux;
@@ -192,7 +221,7 @@ int removerFila(Fila* fila)
     else
     {
         resp = fila->primeiro->prox->value;
-        Celula* aux = fila->primeiro;
+        CelulaF* aux = fila->primeiro;
         fila->primeiro = fila->primeiro->prox;
         free(aux);
     }
@@ -202,10 +231,11 @@ int removerFila(Fila* fila)
 
 int ContarFila(Fila* fila)
 {
-    Celula* aux = fila->primeiro->prox;
+    CelulaF* aux = fila->primeiro->prox;
 
     int sum = 0;
-    while (aux != NULL){
+    while (aux != NULL)
+    {
         sum++;
         aux = aux->prox;
     }
@@ -218,14 +248,13 @@ void mostrarFila(Fila* fila)
     if (fila->primeiro->prox == NULL) printf("Lista vazia");
     else
     {
-        Celula* aux = fila->primeiro->prox;
+        CelulaF* aux = fila->primeiro->prox;
         while (aux != NULL) {
             printf("%d ", aux->value);
             aux = aux->prox;
         }
     }
 }
-
 
 
 
@@ -248,9 +277,10 @@ int contarLista(Lista* lista);
 void mostrarLista(Lista* lista);
 */
 typedef struct Lista Lista;
-struct Lista{
-    Celula* primeiro;
-    Celula* ultimo;
+struct Lista
+{
+    CelulaL* primeiro;
+    CelulaL* ultimo;
 };
 
 
@@ -277,7 +307,7 @@ void mostrarLista(Lista* lista);
 Lista iniciarLista()
 {
     Lista tmp;
-    Celula *aux = (Celula*)malloc(1 * sizeof(Celula));
+    CelulaL *aux = (CelulaL*)malloc(1 * sizeof(CelulaL));
     aux->prox = NULL;
     aux->ant = NULL;
     tmp.primeiro = aux;
@@ -289,7 +319,7 @@ Lista iniciarLista()
 
 void inserirInicioLista(Lista* lista, int x)
 {
-    Celula* aux = (Celula*)malloc(1 * sizeof(Celula));
+    CelulaL* aux = (CelulaL*)malloc(1 * sizeof(CelulaL));
     aux->value = x;
     aux->ant = lista->primeiro;
     aux->prox = lista->primeiro->prox;
@@ -303,7 +333,7 @@ void inserirInicioLista(Lista* lista, int x)
 
 void inserirFimLista(Lista* lista, int x)
 {
-    lista->ultimo->prox = (Celula*)malloc(1 * sizeof(Celula));
+    lista->ultimo->prox = (CelulaL*)malloc(1 * sizeof(CelulaL));
     lista->ultimo->prox->ant = lista->ultimo;
     lista->ultimo = lista->ultimo->prox;
     lista->ultimo->value = x;
@@ -312,7 +342,7 @@ void inserirFimLista(Lista* lista, int x)
 
 void inserirPosiLista(Lista* lista, int x, int posi)
 {
-    Celula* tmp = lista->primeiro;
+    CelulaL* tmp = lista->primeiro;
     for ( int i = 0; i < posi; i++ )
     {
         if (tmp == NULL)
@@ -323,7 +353,7 @@ void inserirPosiLista(Lista* lista, int x, int posi)
         tmp = tmp->prox;
     }
     
-    Celula* aux = (Celula*)malloc(1 * sizeof(Celula));
+    CelulaL* aux = (CelulaL*)malloc(1 * sizeof(CelulaL));
     aux->value = x;
     aux->prox = tmp->prox;
     aux->ant = tmp;
@@ -378,7 +408,7 @@ int removerPosiLista(Lista* lista, int posi)
 {   
     int resp = 0;
 
-    Celula* tmp = lista->primeiro;
+    CelulaL* tmp = lista->primeiro;
     for ( int i = 0; i < posi + 1; i++ )
     {
         if (tmp == NULL)
@@ -409,7 +439,7 @@ int removerPosiLista(Lista* lista, int posi)
 
 int contarLista(Lista* lista)
 {
-    Celula* aux = lista->primeiro->prox;
+    CelulaL* aux = lista->primeiro->prox;
 
     int total = 0;
     while ( aux != NULL )
@@ -426,7 +456,7 @@ void mostrarLista(Lista* lista)
     if (lista->primeiro->prox == NULL) printf("Lista vazia");
     else
     {
-        Celula* aux = lista->primeiro->prox;
+        CelulaL* aux = lista->primeiro->prox;
         while (aux != NULL) {
             printf("%d ", aux->value);
             aux = aux->prox;
@@ -446,7 +476,8 @@ void mostrarLista(Lista* lista)
 
 
 
-    // Arvore Binaria de Pesquisa
+    // Arvore AVL
+
 
 
 #endif
