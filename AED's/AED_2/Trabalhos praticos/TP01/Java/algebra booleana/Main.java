@@ -16,7 +16,6 @@ class Main{
         while ( !((input = sc.nextLine()).equals("0")) ){
 
             int max = input.charAt(0) - '0';
-
             int[] door = new int[max];
 
             for(int i = 1; i <= max; i++) door[i-1] = input.charAt(i*2) - '0';
@@ -47,15 +46,12 @@ class Main{
         while ( (end = input.length() - 1) > 1 ){
 
             while ( input.charAt(end) != '(' ) end--;
-
             savePoint = end;
 
             char c = input.charAt(--end);
-
             while ( input.charAt(savePoint) != ')') savePoint++;
             
             auxBool = input.substring(end, ++savePoint);
-
             switch(c){
                 case 'a':
                 auxBool = auxBool.contains("0") ? "0" : "1";
