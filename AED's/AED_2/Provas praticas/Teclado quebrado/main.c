@@ -21,7 +21,6 @@ Para cada caso, imprimir o texto Beiju na tela.
 #include <string.h>
 
 void inserirInicio(char input, char beiju[], int* fim, int* begin);
-
 void inserirFim(char input, char beiju[], int* fim, int* begin);
 
 int main(){
