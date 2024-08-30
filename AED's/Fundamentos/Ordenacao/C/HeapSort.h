@@ -9,7 +9,7 @@ void swap(int array[], int i, int j);
 void heapSort(int array[], int length)
 {
     int endIndex = length - 1;
-    for ( int max = 1; max < length; max++ )
+    for (int max = 1; max < length; max++)
     {
         makeHeap(array, max);
     }
@@ -25,7 +25,7 @@ void heapSort(int array[], int length)
 // Montar o array em formato de heap
 void makeHeap(int array[], int max)
 {
-    for ( int i = max; max > 0 && array[i] > array[(i-1)/2]; i = (i-1)/2 )
+    for (int i = max; max > 0 && array[i] > array[(i-1)/2]; i = (i-1)/2)
     {
         swap(array, i, (i-1)/2);
     }
