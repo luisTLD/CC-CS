@@ -1,8 +1,6 @@
 #ifndef InsertionSort_h
 #define InsertionSort_h
 
-#include "Swap.h"
-
 // InsertionSort -> n^2
 void insertionSort(int arr[], int length)
 {
