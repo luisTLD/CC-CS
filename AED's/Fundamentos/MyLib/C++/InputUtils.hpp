@@ -1,5 +1,5 @@
-#ifndef INPUTUTILS_HPP
-#define INPUTUTILS_HPP
+#ifndef InputUtils_hpp
+#define InputUtils_hpp
 
 #include <iostream>
 #include <limits>

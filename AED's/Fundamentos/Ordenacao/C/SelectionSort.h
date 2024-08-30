@@ -1,9 +1,7 @@
 #ifndef SelectionSort_h
 #define SelectionSort_h
 
-void swap(int array[], int i, int j);
-
-
+#include "Swap.h"
 
 // SelectionSort -> n^2
 void selectionSort(int array[], int length)
@@ -22,14 +20,6 @@ void selectionSort(int array[], int length)
         swap(array, i, lowest);
     }
 }
-
-void swap(int array[], int i, int j)
-{
-    int aux = array[i];
-    array[i] = array[j];
-    array[j] = aux;
-}
-
 
 
 #endif

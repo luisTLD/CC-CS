@@ -1,9 +1,7 @@
 #ifndef QuickSort_h
 #define QuickSort_h
 
-void swap(int array[], int i, int j);
-
-
+#include "Swap.h"
 
 // QuickSort -> n.log(n) // n^2 pior caso
 void quickSort(int array[], int length)
@@ -32,14 +30,6 @@ void quickSortCall(int array[], int left, int right)
         if ( right > i ) quickSortCall(array, i, right);
     }
 }
-
-void swap(int array[], int i, int j)
-{
-    int aux = array[i];
-    array[i] = array[j];
-    array[j] = aux;
-}
-
 
 
 #endif

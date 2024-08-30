@@ -1,9 +1,7 @@
 #ifndef HeapSort_h
 #define HeapSort_h
 
-void swap(int array[], int i, int j);
-
-
+#include "Swap.h"
 
 // HeapSort -> n.log(n)
 void heapSort(int array[], int length)
@@ -61,14 +59,6 @@ int getBiggerSon(int array[], int aux, int endIndex)
     else son = ((2*aux)+2);
     return son;
 }
-
-void swap(int array[], int i, int j)
-{
-    int aux = array[i];
-    array[i] = array[j];
-    array[j] = aux;
-}
-
 
 
 #endif

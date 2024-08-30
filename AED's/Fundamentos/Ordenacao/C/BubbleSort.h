@@ -1,10 +1,7 @@
 #ifndef BubbleSort_h
 #define BubbleSort_h
 
-#include <stdio.h>
-
-void swap(int array[], int i, int j);
-
+#include "Swap.h"
 
 // BubbleSort -> n^2
 void bubbleSort(int array[], int length)
@@ -45,14 +42,6 @@ void bubbleSortOpt(int array[], int length)
             last_swap = new_last_swap;
         }
     }
-}
-
-
-void swap(int array[], int i, int j)
-{
-    int aux = array[i];
-    array[i] = array[j];
-    array[j] = aux;
 }
 
 

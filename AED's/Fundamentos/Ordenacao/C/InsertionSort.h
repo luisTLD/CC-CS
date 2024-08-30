@@ -1,9 +1,7 @@
 #ifndef InsertionSort_h
 #define InsertionSort_h
 
-void swap(int array[], int i, int j);
-
-
+#include "Swap.h"
 
 // InsertionSort -> n^2
 void insertionSort(int arr[], int length)
@@ -20,14 +18,6 @@ void insertionSort(int arr[], int length)
         arr[j + 1] = tmp;
     }
 }
-
-void swap(int array[], int i, int j)
-{
-    int aux = array[i];
-    array[i] = array[j];
-    array[j] = aux;
-}
-
 
 
 #endif
