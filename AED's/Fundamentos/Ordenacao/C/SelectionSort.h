@@ -40,7 +40,7 @@ void SelectionSortOpt(int array[], int length)
 
         swap(array, lowest, left);
         
-        // Se o valor máximo estiver na posição 'left', ajuste o índice 'max' para não trocar incorretamente
+        // Se o valor máximo estiver na posição 'left', ajustar o índice 'max' para não trocar incorretamente
         if (max == left)  max = lowest;
 
         swap(array, max, right - 1);
