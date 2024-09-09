@@ -1,5 +1,5 @@
-#ifndef InputUtils_hpp
-#define InputUtils_hpp
+#ifndef INPUTUTILS_HPP
+#define INPUTUTILS_HPP
 
 #include <iostream>
 #include <limits>
@@ -23,7 +23,6 @@ int readInt(const std::string& errorMessage)
     do 
     {
         std::cin >> x;
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         if (std::cin.fail()) 
         {
             std::cerr << errorMessage << std::endl;
@@ -33,6 +32,7 @@ int readInt(const std::string& errorMessage)
         {
             valid = true;
         }
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     } while (!valid);
 
     return x;
@@ -45,7 +45,6 @@ float readFloat(const std::string& errorMessage)
     do 
     {
         std::cin >> x;
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         if (std::cin.fail()) 
         {
             std::cerr << errorMessage << std::endl;
@@ -55,6 +54,7 @@ float readFloat(const std::string& errorMessage)
         {
             valid = true;
         }
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     } while (!valid);
 
     return x;
@@ -67,7 +67,6 @@ double readDouble(const std::string& errorMessage)
     do 
     {
         std::cin >> x;
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         if (std::cin.fail()) 
         {
             std::cerr << errorMessage << std::endl;
@@ -77,6 +76,7 @@ double readDouble(const std::string& errorMessage)
         {
             valid = true;
         }
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     } while (!valid);
 
     return x;
@@ -88,6 +88,5 @@ std::string readString()
     std::getline(std::cin, x);
     return x;
 }
-
 
 #endif
