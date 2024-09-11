@@ -1,6 +1,6 @@
 # Matemática
 
-Este repositório contém anotações sobre tópicos de Matemática que foram aprendidos durante o curso.
+Este repositório contém anotações sobre tópicos de Matemática que foram aprendidos durante o curso
 
 ## Conteúdo
 
