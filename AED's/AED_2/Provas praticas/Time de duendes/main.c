@@ -35,44 +35,56 @@ Depois de cada time, deverá haver uma linha em branco, inclusive após o últim
 #include <string.h>
 #include <stdlib.h>
 
-typedef struct{
+typedef struct
+{
     char nome[80];
     int idade;
 } Duende;
 
 void mySort(Duende duendes[], int max);
+int compDuendes(Duende x, Duende y);
 
-int main (){
+int main ()
+{
     int max = 0;
     scanf("%d", &max);
 
+    // Array de duendes
     Duende duendes[max];
-    for ( int i = 0; i < max; i++ ){
-        scanf(" %s", &duendes[i].nome);
+    for ( int i = 0; i < max; i++ )
+    {
+        scanf(" %s", duendes[i].nome);
         scanf(" %d", &duendes[i].idade);
     }
 
+    // Ordenar os duendes por idade e desempatar no nome
     mySort(duendes, max);
 
+    // Quantidade total de times, sempre com 3 em cada time
     int totalTeam = max/3;
 
-    for ( int i = 0; i < totalTeam; i++ ){
+    // Printar corretamente os times
+    for ( int i = 0; i < totalTeam; i++ )
+    {
         printf("Time %d\n", i + 1);
         printf("%s %d\n", duendes[i].nome, duendes[i].idade);
         printf("%s %d\n", duendes[i + totalTeam].nome, duendes[i + totalTeam].idade);
         printf("%s %d\n\n", duendes[i + (totalTeam*2)].nome, duendes[i + (totalTeam*2)].idade);
     }
 
-
     return 0;
 }
 
-void mySort(Duende duendes[], int max){
-    for ( int i = 0; i < max - 1; i++ ){
+void mySort(Duende duendes[], int max)
+{
+    for ( int i = 0; i < max - 1; i++ )
+    {
         int maior = i;
 
-        for ( int j = 1 + i; j < max; j++ ){
-            if ( duendes[j].idade > duendes[maior].idade ){
+        for ( int j = 1 + i; j < max; j++ )
+        {
+            if (compDuendes(duendes[j], duendes[maior]) > 0 )
+            {
                 maior = j;
             }
         }
@@ -82,4 +94,17 @@ void mySort(Duende duendes[], int max){
         duendes[maior] = duendes[i];
         duendes[i] = aux;
     }
+}
+
+// Funcao para caso a idade ser a mesma, desempatar no nome
+int compDuendes(Duende x, Duende y)
+{
+    int aux = x.idade - y.idade;
+    
+    if(aux == 0)
+    {
+        aux = strcmp(y.nome, x.nome);
+    }
+    
+    return aux;
 }
