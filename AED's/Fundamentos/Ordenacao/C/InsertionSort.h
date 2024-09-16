@@ -1,5 +1,5 @@
-#ifndef InsertionSort_h
-#define InsertionSort_h
+#ifndef INSERTIONSORT_H
+#define INSERTIONSORT_H
 
 
 int binarySearchInsertion(int array[], int right, int key)

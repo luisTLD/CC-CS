@@ -1,5 +1,5 @@
-#ifndef PilhaEncadeada_h
-#define PilhaEncadeada_h
+#ifndef PILHAENCADEADA_H
+#define PILHAENCADEADA_H
 
 #include <stdio.h>
 #include <stdlib.h>

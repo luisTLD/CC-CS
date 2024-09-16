@@ -1,6 +1,7 @@
 #ifndef SHELLSORT_H
 #define SHELLSORT_H
 
+// Better InsertionSort
 void shellSort(int array[], int length)
 {
     int h = 1;

@@ -1,5 +1,5 @@
-#ifndef SelectionSort_h
-#define SelectionSort_h
+#ifndef SELECTIONSORT_H
+#define SELECTIONSORT_H
 
 #include "Swap.h"
 

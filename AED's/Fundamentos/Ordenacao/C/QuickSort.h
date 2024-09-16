@@ -1,5 +1,5 @@
-#ifndef QuickSort_h
-#define QuickSort_h
+#ifndef QUICKSORT_H
+#define QUICKSORT_H
 
 #include "Swap.h"
 

@@ -1,5 +1,5 @@
-#ifndef HeapSort_h
-#define HeapSort_h
+#ifndef HEAPSORT_H
+#define HEAPSORT_H
 
 #include "Swap.h"
 

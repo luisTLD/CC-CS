@@ -1,9 +1,7 @@
-#ifndef RadixSort_h
-#define RadixSort_h
+#ifndef RADIXSORT_H
+#define RADIXSORT_H
 
 #include <stdlib.h>
-
-
 
 // RadixSort -> n
 void radixSort(int array[], int length)

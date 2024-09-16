@@ -1,5 +1,5 @@
-#ifndef BubbleSort_h
-#define BubbleSort_h
+#ifndef BUBBLESORT_H
+#define BUBBLESORT_H
 
 #include "Swap.h"
 

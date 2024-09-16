@@ -1,5 +1,5 @@
-#ifndef ListaDuplaEncadeada_h
-#define ListaDuplaEncadeada_h
+#ifndef LISTADUPLAENCADEADA_H
+#define LISTADUPLAENCADEADA_H
 
 #include <stdlib.h>
 #include <stdio.h>
