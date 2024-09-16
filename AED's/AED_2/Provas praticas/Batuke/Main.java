@@ -37,13 +37,16 @@ import java.util.Scanner;
 
 class Main {
 
-    public static int total;
-    public static int percorridas;
+    public static int total_move;  // Total de movimentos dentro e fora da matriz
+    public static int in_move;     // Movimentos dentro da matriz
+    public static int true_move;   // Total de movimento dentro e fora da matriz, ate o ultimo momento dentro da matriz
 
-    public static void main(String[] args){
+    public static void main(String[] args)
+    {
         Scanner sc = new Scanner(System.in);
-        total = 0;
-        percorridas = 0;
+        total_move = 0;
+        in_move = 0;
+        true_move = 0;
 
         int max = 0;
         int valor = 1;
@@ -51,8 +54,10 @@ class Main {
 
         int[][] matriz = new int[max][max];
 
-        for ( int i = 0; i < max; i++ ){
-            for ( int j = 0; j < max; j++ ){
+        for (int i = 0; i < max; i++)
+        {
+            for (int j = 0; j < max; j++)
+            {
                 matriz[i][j] = valor++;
             }
         }
@@ -62,11 +67,13 @@ class Main {
         posi[1] = sc.nextInt();
 
         int move = 1;
+        // Enquanto os movimentos dentroda matriz, forem menor que o tamnho dela
+        while (in_move < max*max)
+        {
+            // Primeiro caso, nao fazer ++ 
+            if (move > 1) move++;
 
-        // Condição Gambiarra
-        while ( move < max*3 ){
-            if ( move > 1 ) move++;
-
+            // Andar move vezes para uma direcao e printar
             dir(posi, move, matriz, max); 
             baixo(posi, move, matriz, max);    
             move++;
@@ -74,49 +81,82 @@ class Main {
             esq(posi, move, matriz, max);      
             cima(posi, move, matriz, max);
         }
-        System.out.println("\n" + percorridas);
+        System.out.println("\n" + true_move);
         
         sc.close();
     }
 
 
-    static void dir(int[] posi, int move, int[][] matriz, int max){
-        for ( int i = 0; i < move; i++ ){
-            if ( locate(posi, max) ) System.out.print(matriz[posi[0]][posi[1]] + " ");
+    static void dir(int[] posi, int move, int[][] matriz, int max)
+    {
+        for ( int i = 0; i < move; i++ )
+        {
+            if (locate(posi, max))
+            {
+                System.out.print(matriz[posi[0]][posi[1]]);
+                // Nao printar um espaco a mais caso seja o ultimo print
+                if (in_move < max * max) System.out.print(" ");
+            }
             posi[1] = posi[1] + 1;
         }
     }
 
-    static void baixo(int[] posi, int move, int[][] matriz, int max){
-        for ( int i = 0; i < move; i++ ){
-            if ( locate(posi, max) ) System.out.print(matriz[posi[0]][posi[1]] + " ");
+    static void baixo(int[] posi, int move, int[][] matriz, int max)
+    {
+        for ( int i = 0; i < move; i++ )
+        {
+            if (locate(posi, max))
+            {
+                System.out.print(matriz[posi[0]][posi[1]]);
+                // Nao printar um espaco a mais caso seja o ultimo print
+                if (in_move < max * max) System.out.print(" ");
+            }
             posi[0] = posi[0] + 1;
         }
-        
     }
 
-    static void esq(int[] posi, int move, int[][] matriz, int max){
-        for ( int i = 0; i < move; i++ ){
-            if ( locate(posi, max) ) System.out.print(matriz[posi[0]][posi[1]] + " ");
+    static void esq(int[] posi, int move, int[][] matriz, int max)
+    {
+        for ( int i = 0; i < move; i++ )
+        {
+            if (locate(posi, max)) 
+            {
+                System.out.print(matriz[posi[0]][posi[1]]);
+                // Nao printar um espaco a mais caso seja o ultimo print
+                if (in_move < max * max) System.out.print(" ");
+            }
             posi[1] = posi[1] - 1;
         }
-        
     }
 
-    static void cima(int[] posi, int move, int[][] matriz, int max){
-        for ( int i = 0; i < move; i++ ){
-            if ( locate(posi, max) ) System.out.print(matriz[posi[0]][posi[1]] + " ");
+    static void cima(int[] posi, int move, int[][] matriz, int max)
+    {
+        for (int i = 0; i < move; i++)
+        {
+            if (locate(posi, max))
+            {
+                System.out.print(matriz[posi[0]][posi[1]]);
+                // Nao printar um espaco a mais caso seja o ultimo print
+                if (in_move < max * max) System.out.print(" ");
+            }
             posi[0] = posi[0] - 1;
         }
-        
     }
     
-    static boolean locate(int[] posi, int max){
-        boolean resp = ( posi[0] >= 0 && posi[0] < max ) && ( posi[1] >= 0 && posi[1] < max );
-        total++;
-        if ( resp ) percorridas = total;
+    // Verificar se aquela posicao esta dentro da matriz
+    static boolean locate(int[] posi, int max)
+    {
+        boolean resp = false;
+        if ((posi[0] >= 0 && posi[0] < max) && (posi[1] >= 0 && posi[1] < max))
+        {
+            resp = true;
+            in_move++;
+        }
+
+        total_move++;
+        // Se tiver dentro, atualizar o valor de true_move
+        if (resp) true_move = total_move;
     
         return resp;
     }
-
 }
