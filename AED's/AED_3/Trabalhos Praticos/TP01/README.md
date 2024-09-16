@@ -1,4 +1,4 @@
-# Trabalho Prático 01 - AED 03
+# Trabalho Prático 01
 
 ## Descrição
 Este projeto implementa um CRUD genérico utilizando Java, capaz de realizar operações de inclusão, leitura, atualização e exclusão em um arquivo. O foco do trabalho foi desenvolver um CRUD para gerenciar **tarefas**, além de implementar um **índice com tabela hash extensível**, para mapear o ID de cada tarefa ao seu endereço no arquivo.
