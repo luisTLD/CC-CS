@@ -1,30 +1,48 @@
 /*
-O aeroporto de Congonhas recebe todos os dias uma média de 600 pousos e decolagens, 
-ou cerca de 36 por hora. No último ano, foram exatamente 223.989 movimentos aéreos. 
-Para organizar todo o fluxo de aviões que chegam a Congonhas e saem de lá, a torre de controle funciona o tempo inteiro com nível máximo de atenção. 
-Para descartar qualquer possibilidade de erro humano o chefe do controle de tráfego aéreo de Congonhas contratou você 
-para desenvolver um programa que organize automaticamente o fluxo de aviões no campo de pouso.
+Batuke é um cachorro com comportamento repetitivo que tem uma rotina particular quando sai para caminhar na sua vizinhança.
+A vizinhança também é de certa forma particular: uma matriz N x N que batuke percorre rotineiramente em espiral. 
+Batuke inicia percorrendo: 1 célula à direita, uma abaixo, 
+seguida por duas à esquerda, duas acima, então 3 à direita, 3 para baixo, então 4, e assim por diante.
 
-Para isso, basta seguir o seguinte protocolo, os aviões que veem do lado Oeste da pista têm maior prioridade de serem colocados na fila, 
-pois são aqueles que estão mais próximo do localizador (início da pista). Já os aviões que estão se aproximando pelo lado Norte e Sul, 
-devem ser inseridos na fila 1 por vez, ou seja, insere-se 1 avião do lado Norte e em seguida 1 avião do lado Sul. Por último, 
-insere-se o próximo avião que esteja se aproximando ao lado leste da pista.
+Lucas (o dono de Batuke), leva Batuke de carro para a célula inicial 
+e o cão sempre segue sua rotina de corrida pelas células de sua vizinhança.
+
+Por exemplo, se a vizinhança tem tamanho N = 4, as células são enumeradas como segue:
+
+e o percurso feito por Batuke, iniciando na célula 1,1 
+(célula superior esquerda é 0,0) é: 6,7,11,10,9,5,1,2,3,4,8,12,16,15,14,13
+
+Neste caso, a rotina de Batuke o faz caminhar por 16 células no total.
+
+Mas Batuke não compreende nada sobre fronteiras e ele sempre faz sua rotina 
+(mesmo se ele tem que caminhar por diversas células a mais), para atravessar todas as células da vizinhança. Se a célula inicial for 2,2 por exemplo, 
+a travessia em espiral (apenas as células da vizinhança são mostradas) é: 11,12,16,15,14,10,6,7,8,13,9,5,1,2,3,4. Neste caso, Batuke caminha por 24 células no total. 
+Lucas sabe que você está estudando Computação e ele pediu a você um programa para resolver este problema: dado a vizinhança de N linhas por N colunas e uma célula inicial, 
+você deverá mostrar o percurso em espiral e o total células percorridas.
 
 Entrada
-A entrada é composta por um número inteiro P, representando o ponto cardeal do avião que entrou no campo da pista (-4 <= P <= -1), 
-onde (-4 representa o lado leste, -3 o lado norte, -2 lado sul e -1 lado oeste) . Em seguida é realizada a entrada dos respectivos aviões, 
-compostos de um identificador começando com a letra “A” seguida de um número inteiro I (1 <= I <= 1000). 
-A qualquer momento é permitido trocar o ponto cardeal, e inserir novas aeronaves, repetidamente até que o controlador finalize a sessão com o dígito 0.
+A entrada consiste em três números inteiros: N (2 < N ≤ 10), 
+F e C. N é o número de linhas na vizinhança 
+(células enumeradas em 1..NxN, por linhas, da esquerda para a direita). 
+F e C indica linha e coluna aonde Batuke inicia o seu percurso.
 
 Saída
-A saída é composta de uma linha contendo as aeronaves enfileiradas pela ordem do protocolo estabelecido pelo aeroporto.
+A saída consiste em 2 linhas. 
+A primeira linha contém uma lista contendo as células da vizinhança, 
+ordenadas pelo percurso que Batuke e separadas por um espaço em branco. 
+A segunda linha mostra o número total de células percorridas por Batuke.  
 */
 
-import java.util.*;
-import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
-class Main{
-    public static void main(String[] args){
+public class Main
+{
+ 
+    public static void main(String[] args)
+    {
+ 
         Scanner sc = new Scanner(System.in);
 
         List<String> oeste = new ArrayList<>();
@@ -32,7 +50,6 @@ class Main{
         List<String> norte = new ArrayList<>();
         List<String> leste = new ArrayList<>();
 
-        int[] posi = new int[4];
         // 0 -> oeste; 1 -> sul; 2 -> norte; 3 -> leste
         String aux = new String();
         String caso = new String();
@@ -41,13 +58,15 @@ class Main{
         // Adicionar o Voo em seu respectivo Array
         aux = sc.nextLine();
         caso = aux;
-        while ( aux.equals("0") == false ){
+        while (!aux.equals("0"))
+        {
             aux = sc.nextLine();
-            if ( aux.equals("0") == true ) break;
-            if ( aux.charAt(0) == '-' ){
-               caso = aux; 
-            } else  {
-                switch (caso){
+            if (aux.equals("0")) break;
+            if (aux.charAt(0) == '-') caso = aux;
+            else
+            {
+                switch (caso)
+                {
                     case "-1":
                         oeste.add(aux);
                     break;
@@ -71,27 +90,32 @@ class Main{
         // Fazer um merge dos arrays para o array de sainda
         // Apenas adicionar caso aquele indice existir no array
         int bigger = maiorLista(oeste, norte, sul, leste);
-        for ( int i = 0; i < bigger; i++ ){
-            if ( existe(i, oeste) ) merge.add(oeste.get(i));
-            if ( existe(i, norte) ) merge.add(norte.get(i));
-            if ( existe(i, sul) ) merge.add(sul.get(i));
-            if ( existe(i, leste) ) merge.add(leste.get(i));
+        for (int i = 0; i < bigger; i++)
+        {
+            if (existe(i, oeste)) merge.add(oeste.get(i));
+            if (existe(i, norte)) merge.add(norte.get(i));
+            if (existe(i, sul)) merge.add(sul.get(i));
+            if (existe(i, leste)) merge.add(leste.get(i));
         }
 
-        // Printar a Saida
-        for ( int i = 0; i < merge.size(); i++ ){
-            System.out.print(merge.get(i) + " ");
+        // Printar a Saida formatada para dar 100%
+        for (int i = 0; i < merge.size(); i++)
+        {
+            System.out.print(merge.get(i));
+            // Se for o ultimo print, nao printar um espaco a +
+            if (i != (merge.size() - 1)) System.out.print(" ");
         }
+        
+         System.out.println();
 
         sc.close();
     }
 
     // Verificar se o Indice existe no array
-    public static boolean existe(int index, List<String> aux){
+    public static boolean existe(int index, List<String> aux)
+    {
         boolean resp = true;
-
-        if ( aux.size() <= index ) resp = false;
-
+        if (aux.size() <= index) resp = false;
         return resp;
     }
 
@@ -99,13 +123,11 @@ class Main{
     public static int maiorLista(List<String> lista1, List<String> lista2, List<String> lista3, List<String> lista4){
         int maior = lista1.size();
 
-        if ( maior < lista2.size() ) maior = lista2.size();
-        if ( maior < lista3.size() ) maior = lista3.size();
-        if ( maior < lista4.size() ) maior = lista4.size();
+        if (maior < lista2.size()) maior = lista2.size();
+        if (maior < lista3.size()) maior = lista3.size();
+        if (maior < lista4.size()) maior = lista4.size();
 
         return maior;
     }
-
+ 
 }
-
-// -4 representa o lado leste, -3 o lado norte, -2 lado sul e -1 lado oeste
