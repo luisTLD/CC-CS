@@ -65,8 +65,8 @@ void loop()
       		break;
     }
   	
-  	
-  	// Ligar ou Desligar 
+	
+  			// Ligar ou Desligar 
   
   	// Led Bit_A, Bit_B
   	for (int i = 0; i < 2; i++)
