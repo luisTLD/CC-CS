@@ -93,31 +93,31 @@ public class Personagem{
     public boolean isWizard() {return wizard;}
 
     // Retornar um clone
-    public static Personagem clonePersonagem(Personagem x){
+    public Personagem clone() {
         Personagem clone = new Personagem();
 
-        clone.setId(x.getId());
-        clone.setName(x.getName());
-        clone.setAlternateNames(new ArrayList<>(x.getAlternateNames()));
-        clone.setHouse(x.getHouse());
-        clone.setAncestry(x.getAncestry());
-        clone.setSpecies(x.getSpecies());
-        clone.setPatronus(x.getPatronus());
-        clone.setHogwartsStaff(x.isHogwartsStaff());
-        clone.setHogwartsStudent(x.getHogwartsStudent());
-        clone.setActorName(x.getActorName());
-        clone.setAlive(x.isAlive());
-        clone.setAlternateActors(new ArrayList<>(x.getAlternateActors()));
-        clone.setDateOfBirth(x.getDateOfBirth());
-        clone.setYearOfBirth(x.getYearOfBirth());
-        clone.setEyeColor(x.getEyeColor());
-        clone.setGender(x.getGender());
-        clone.setHairColor(x.getHairColor());
-        clone.setWizard(x.isWizard());
-    
+        clone.id = this.id;
+        clone.name = this.name;
+        clone.alternateNames = new ArrayList<>(this.alternateNames);
+        clone.house = this.house;
+        clone.ancestry = this.ancestry;
+        clone.species = this.species;
+        clone.patronus = this.patronus;
+        clone.hogwartsStaff = this.hogwartsStaff;
+        clone.hogwartsStudent = this.hogwartsStudent;
+        clone.actorName = this.actorName;
+        clone.alive = this.alive;
+        clone.alternateActors = new ArrayList<>(this.alternateActors);
+        clone.dateOfBirth = this.dateOfBirth;
+        clone.yearOfBirth = this.yearOfBirth;
+        clone.eyeColor = this.eyeColor;
+        clone.gender = this.gender;
+        clone.hairColor = this.hairColor;
+        clone.wizard = this.wizard;
+
         return clone;
     }
-
+    
     // Função para printar todos os atributos 
     public void printPessoa() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
