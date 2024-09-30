@@ -6,7 +6,7 @@
 // QuickSort -> n.log(n) // n^2 pior caso
 void quickSort(int array[], int length)
 {
-    quickSortCall(array, 0, length);
+    quickSortCall(array, 0, length - 1);
 }
 // Chamada recursiva p/ quickSort
 void quickSortCall(int array[], int left, int right)
@@ -25,10 +25,10 @@ void quickSortCall(int array[], int left, int right)
             i++;
             j--;
         }
-
-        if ( left < j ) quickSortCall(array, left, j);
-        if ( right > i ) quickSortCall(array, i, right);
     }
+   
+    if ( left < j ) quickSortCall(array, left, j);
+    if ( right > i ) quickSortCall(array, i, right);
 }
 
 
