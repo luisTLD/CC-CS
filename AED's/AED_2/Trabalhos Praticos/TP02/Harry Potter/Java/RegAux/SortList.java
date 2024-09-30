@@ -73,10 +73,9 @@ public class SortList {
                 i++;
                 j--;
             }
-
+        }
             if (left < j) quickSortCall(personagens, left, j, totalSort);
             if (totalSort > i) quickSortCall(personagens, i, right, totalSort);
-        }
     }
 
 
