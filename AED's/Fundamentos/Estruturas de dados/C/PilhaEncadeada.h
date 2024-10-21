@@ -22,6 +22,8 @@ inserirPilha(Pilha* pilha, int x);
 removerPilha(Pilha* pilha);
 contarPilha(Pilha* pilha);
 mostrarPilha(Pilha* pilha); 
+inverterPilha(Pilha* p);
+inverterPilhaRec(Pilha* Pilha);
 */
 typedef struct Pilha Pilha;
 struct Pilha
@@ -41,8 +43,12 @@ int removerPilha(Pilha* pilha);
 int contarPilha(Pilha* pilha);
 // Mostra a pilha na ordem que foram inseridos
 void mostrarPilha(Pilha* pilha);
-// Inverter pilha
 void mostrarPilhaCall(CelulaP* aux);
+// Inverter pilha
+void inverterPilha(Pilha* p);
+// Inverter Pilha Recursivamente
+void inverterPilhaRec(Pilha* Pilha);
+void inverterPilhaAux(Pilha* pilha, CelulaP* i, CelulaP* j);
 
 
 Pilha iniciarPilha()
@@ -118,5 +124,27 @@ void inverterPilha(Pilha* p){
 
     *p = aux; 
 }
+
+void inverterPilhaRec(Pilha* pilha)
+{
+    CelulaP* aux = pilha->topo;
+    inverterPilhaAux(pilha, aux, aux->prox);
+}
+
+void inverterPilhaAux(Pilha* pilha, CelulaP* i, CelulaP* j)
+{
+    if (j->prox != NULL)
+    {
+        inverterPilhaAux(pilha, j, j->prox);
+        i->prox = NULL;
+    }
+    else
+    {
+        pilha->topo = j;
+    }
+
+    j->prox = i;
+}
+
 
 #endif
