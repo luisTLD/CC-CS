@@ -1,9 +1,4 @@
-# TP2
-
-### Alunos
-- Edson Pimenta de Almeida
-- Luís Augusto Starling Toledo
-- Luiz Gabriel Milione Assis
+# Trabalho Prático 02
 
 ### Descrição do Projeto
 
