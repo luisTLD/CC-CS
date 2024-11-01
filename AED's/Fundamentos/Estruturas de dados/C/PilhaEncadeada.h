@@ -127,22 +127,16 @@ void inverterPilha(Pilha* p){
 
 void inverterPilhaRec(Pilha* pilha)
 {
-    CelulaP* aux = pilha->topo;
-    inverterPilhaAux(pilha, aux, aux->prox);
+    if (pilha->topo == NULL || pilha->topo->prox == NULL) return;
+    CelulaP* aux = pilha->topo->prox;
+    pilha->topo->prox = NULL;
+    inverterPilhaAux(pilha, pilha->topo, aux);
 }
 
 void inverterPilhaAux(Pilha* pilha, CelulaP* i, CelulaP* j)
 {
-    if (j->prox != NULL)
-    {
-        inverterPilhaAux(pilha, j, j->prox);
-        i->prox = NULL;
-    }
-    else
-    {
-        pilha->topo = j;
-    }
-
+    if (j->prox != NULL) inverterPilhaAux(pilha, j, j->prox);
+    else pilha->topo = j;
     j->prox = i;
 }
 
