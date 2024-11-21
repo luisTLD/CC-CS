@@ -58,16 +58,23 @@ public class ArquivoCategoria extends Arquivo<Categoria>
     }
 
     // Listar todas categorias
-    public void list() 
+    public void listarCategoria() 
     {
-        try
+        ArrayList<Categoria> c = new ArrayList<>();
+        c = super.readAll();
+
+        if (c.isEmpty()) 
         {
-            System.out.println();
-            indice_indireto_nome.show();
+            System.out.println("Nao existem categorias criadas");
         }
-        catch (Exception e)
+        else
         {
-            System.err.println("Erro no sistema");
+            System.out.println("\nCategorias criadas: ");
+
+            for (int i = 0; i < c.size(); i++) 
+            {
+                System.out.println((i + 1) + ") " + c.get(i).getNome());
+            }
         }
     }
 

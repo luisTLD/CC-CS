@@ -33,7 +33,7 @@ public class MenuCategorias
             System.out.println("2 - Incluir");
             System.out.println("3 - Alterar");
             System.out.println("4 - Excluir");
-            System.out.println("5 - Listar");
+            System.out.println("5 - Listar Categorias");
             System.out.println("0 - Voltar");
 
             System.out.print("Opção: ");
@@ -50,19 +50,25 @@ public class MenuCategorias
             switch (opcao)
             {
                 case 1:
+                    arq_categoria.listarCategoria();
+                    
                     buscarCategoria(); // Busca uma categoria
                     break;
                 case 2:
                     incluirCategoria(); // Inclui uma nova categoria
                     break;
                 case 3:
+                    arq_categoria.listarCategoria();
+
                     alterarCategoria(); // Altera uma categoria existente
                     break;
                 case 4:
+                    arq_categoria.listarCategoria();
+
                     excluirCategoria(); // Exclui uma categoria
                     break;
                 case 5:
-                    arq_categoria.list(); // Listar categorias
+                    arq_categoria.listarCategoria(); // Listar categorias
                     break;
                 case 0:
                     break; // Volta ao menu anterior
@@ -150,14 +156,14 @@ public class MenuCategorias
         nome = sc.nextLine(); // Lê o nome da categoria a ser alterada
 
         if (nome.length() == 0) return; // Se o nome for vazio, retorna
-
-        System.out.println("Confirma a alteracao da categoria? (S/N) ");
-        char resp = sc.nextLine().charAt(0); // Confirmação do usuário
-        if (resp == 'S' || resp == 's')
+        try
         {
-            try
+            Categoria c = arq_categoria.read(nome); // Lê a categoria do arquivo
+
+            System.out.println("Confirma a alteracao da categoria? (S/N) ");
+            char resp = sc.nextLine().charAt(0); // Confirmação do usuário
+            if (resp == 'S' || resp == 's')
             {
-                Categoria c = arq_categoria.read(nome); // Lê a categoria do arquivo
                 System.out.println("Digite o novo nome da categoria: ");
                 nome = sc.nextLine(); // Lê o novo nome
 
@@ -166,10 +172,10 @@ public class MenuCategorias
 
                 System.out.println("Categoria atualizada com sucesso.");
             }
-            catch (Exception e)
-            {
-                System.err.println("Erro do sistema. Nao foi possivel criar a categoria!"); // Erro ao alterar
-            }
+        }
+        catch (Exception e)
+        {
+            System.err.println("Categoria nao econtrada"); // Erro ao alterar
         }
     }
 
@@ -195,6 +201,7 @@ public class MenuCategorias
         catch (Exception e)
         {
             System.err.println("Erro no sistema");
+            return;
         }
 
         System.out.println("Confirma a exclusao da categoria? (S/N) ");

@@ -3,6 +3,7 @@ package Arquivo;
 import java.io.File;
 import java.io.RandomAccessFile;
 import java.lang.reflect.Constructor;
+import java.util.ArrayList;
 
 import Registro.*;
 import Hash.*;
@@ -185,6 +186,53 @@ public class Arquivo<T extends Registro>
         }
 
         return false; // Retorna false se o registro não for encontrado ou não puder ser atualizado
+    }
+
+    // Retornar todos os registros
+    public ArrayList<T> readAll()
+    {
+        ArrayList<T> objects = new ArrayList<>();
+        try
+        {
+            long pos = TAM_CABECALHO; // Ignora o cabecalho inicial
+            if (TAM_CABECALHO + 1 >= arquivo.length())
+            {
+                System.err.println("Arquivo vazio");
+                return objects;
+            }
+
+            // Percorre todo o arquivo
+            while (pos < arquivo.length())
+            {
+                arquivo.seek(pos);
+
+                // Ler o metadado
+                byte lapide = arquivo.readByte();
+                Short arq = arquivo.readShort();
+                
+                // Se nao esta excluído
+                if (lapide == ' ')
+                {
+                    byte[] array = new byte[arq];
+                    arquivo.read(array);
+
+                    T obj = construtor.newInstance();
+                    obj.fromByteArray(array); // Reconstroi o objeto a partir do array de bytes
+                    objects.add(obj);
+                    pos = arquivo.getFilePointer();
+                }
+                else
+                {
+                    pos = arquivo.getFilePointer() + arq;
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            System.err.println("Erro ao listar os registros.");
+        }
+
+        return objects;
     }
 
     // Fecha o arquivo e o indice direto

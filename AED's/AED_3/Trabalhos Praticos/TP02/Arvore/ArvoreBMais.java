@@ -848,40 +848,40 @@ public class ArvoreBMais<T extends RegistroArvoreBMais<T>> {
 
     // Imprime a árvore, usando uma chamada recursiva.
     // A função recursiva é chamada com uma página de referência (raiz)
-    public void show() throws Exception {
-        long raiz;
-        arquivo.seek(0);
-        raiz = arquivo.readLong();
-        if (raiz != -1)
-            show1(raiz);
-        System.out.println();
-    }
+    // public void show() throws Exception {
+    //     long raiz;
+    //     arquivo.seek(0);
+    //     raiz = arquivo.readLong();
+    //     if (raiz != -1)
+    //         show1(raiz);
+    //     System.out.println();
+    // }
 
-    // Impressão recursiva
-    private void show1(long pagina) throws Exception {
-        // Retorna das chamadas recursivas
-        if (pagina == -1)
-            return;
+    // // Impressão recursiva
+    // private void show1(long pagina) throws Exception {
+    //     // Retorna das chamadas recursivas
+    //     if (pagina == -1)
+    //         return;
 
-        // Lê o registro da página passada como referência no arquivo
-        arquivo.seek(pagina);
-        Pagina pa = new Pagina(construtor, ordem);
-        byte[] buffer = new byte[pa.TAMANHO_PAGINA];
-        arquivo.read(buffer);
-        pa.fromByteArray(buffer);
+    //     // Lê o registro da página passada como referência no arquivo
+    //     arquivo.seek(pagina);
+    //     Pagina pa = new Pagina(construtor, ordem);
+    //     byte[] buffer = new byte[pa.TAMANHO_PAGINA];
+    //     arquivo.read(buffer);
+    //     pa.fromByteArray(buffer);
 
-        // Imprime apenas os elementos da página
-        for (int i = 0; i < pa.elementos.size(); i++) {
-            System.out.println(pa.elementos.get(i)); // Imprime cada elemento em uma nova linha
-        }
+    //     // Imprime apenas os elementos da página
+    //     for (int i = 0; i < pa.elementos.size(); i++) {
+    //         System.out.println(pa.elementos.get(i)); // Imprime cada elemento em uma nova linha
+    //     }
 
-        // Chama recursivamente cada filho, se a página não for folha
-        if (pa.filhos.get(0) != -1) {
-            for (int i = 0; i < pa.elementos.size(); i++) {
-                show1(pa.filhos.get(i));
-            }
-            show1(pa.filhos.get(pa.elementos.size())); // Último filho
-        }
-    }
+    //     // Chama recursivamente cada filho, se a página não for folha
+    //     if (pa.filhos.get(0) != -1) {
+    //         for (int i = 0; i < pa.elementos.size(); i++) {
+    //             show1(pa.filhos.get(i));
+    //         }
+    //         show1(pa.filhos.get(pa.elementos.size())); // Último filho
+    //     }
+    // }
 
 }

@@ -8,8 +8,9 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class MenuTarefas {
 
+public class MenuTarefas {
+    
     ArquivoTarefa arq_tarefa;       // Arquivo para manipulação de tarefas
     ArquivoCategoria arq_categoria; // Arquivo para manipulação de categorias
     private static Scanner sc = new Scanner(System.in); // Scanner para entrada do usuário
@@ -33,6 +34,7 @@ public class MenuTarefas {
             System.out.println("2 - Incluir");
             System.out.println("3 - Alterar");
             System.out.println("4 - Excluir");
+            System.out.println("5 - Listar Tarefas");
             System.out.println("0 - Voltar");
 
             System.out.print("Opcao: ");
@@ -44,19 +46,31 @@ public class MenuTarefas {
             {
                 opcao = -1; // Define opção inválida se ocorrer erro
             }
-
             switch (opcao) {
                 case 1:
-                    buscarTarefa(); // Método para buscar tarefa (ainda não implementado)
+                    arq_categoria.listarCategoria();
+
+                    buscarTarefa(); // Método para buscar tarefa
                     break;
                 case 2:
+                    arq_categoria.listarCategoria();
+
                     incluirTarefa(); // Chama o método para incluir nova tarefa
                     break;
                 case 3:
-                    alterarTarefa(); // Método para alterar tarefa (ainda não implementado)
+                    arq_categoria.listarCategoria();
+
+                    alterarTarefa(); // Método para alterar tarefa
                     break;
                 case 4:
-                    excluirTarefa(); // Método para excluir tarefa (ainda não implementado)
+                    arq_categoria.listarCategoria();
+
+                    excluirTarefa(); // Método para excluir tarefa
+                    break;
+                case 5:
+                    arq_categoria.listarCategoria();
+
+                    listarTarefa(); // Listar categorias
                     break;
                 case 0:
                     break; // Sai do loop se a opção for 0
@@ -159,9 +173,20 @@ public class MenuTarefas {
         try
         {
             Categoria c = arq_categoria.read(nome_categoria); // Busca a categoria pelo nome
-            System.out.println("Nome da tarefa: ");
-            String nome_tarefa = sc.nextLine();
             ArrayList<Tarefa> t = arq_tarefa.readAll(c.getId()); // Lê todas as tarefas da categoria
+            
+            if (t.isEmpty())
+            {
+                System.out.println("Nao existem tarefas nesta categoria");
+                return;
+            }
+            for (int i = 0; i < t.size(); i++)
+            {
+                System.out.println((i + 1) + ") " + t.get(i).getNome());
+            }
+
+            System.out.println("\nNome da tarefa: ");
+            String nome_tarefa = sc.nextLine();
     
             Tarefa velha_tarefa = new Tarefa();
             velha_tarefa.setId(-1);
@@ -230,7 +255,7 @@ public class MenuTarefas {
         }
         catch (Exception e)
         {
-            System.err.println("Erro no sistema");
+            System.err.println("Nao encontrada");
         }
     }
 
@@ -243,9 +268,20 @@ public class MenuTarefas {
         try
         {
             Categoria c = arq_categoria.read(nome_categoria); // Busca a categoria pelo nome
-            System.out.println("Nome da tarefa: ");
-            String nome_tarefa = sc.nextLine();
             ArrayList<Tarefa> t = arq_tarefa.readAll(c.getId()); // Lê todas as tarefas da categoria
+            
+            if (t.isEmpty())
+            {
+                System.out.println("Nao existem tarefas nesta categoria");
+                return;
+            }
+            for (int i = 0; i < t.size(); i++)
+            {
+                System.out.println((i + 1) + ") " + t.get(i).getNome());
+            }
+
+            System.out.println("\nNome da tarefa: ");
+            String nome_tarefa = sc.nextLine();
     
             int id_tarefa = -1;
             for (Tarefa tmp : t) // Itera sobre as tarefas
@@ -290,7 +326,42 @@ public class MenuTarefas {
         }
         catch (Exception e)
         {
-            System.err.println("Erro no sistema");
+            System.err.println("Nao encontrada");
+        }
+    }
+
+    public void listarTarefa()
+    {
+        String nome;
+
+        System.out.print("\nDigite o nome da categoria que deseja ver as tarefas: ");
+        nome = sc.nextLine(); // Lê o nome da categoria
+
+        if (nome.length() == 0) return; // Se o nome for vazio, retorna
+
+        try
+        {
+            Categoria c = arq_categoria.read(nome); // Lê a categoria do arquivo
+            System.out.println(c.getNome());       // Exibe a categoria encontrada
+
+            int id_categoria = c.getId();
+            ArrayList<Tarefa> t = arq_tarefa.readAll(id_categoria);
+            
+            if (t.isEmpty())
+            {
+                System.out.println("Nao existem tarefas criadas nesta categoria!");
+            }
+            else
+            {
+                for (int i = 0; i < t.size(); i++)
+                {
+                    System.out.println((i + 1) + ") " + t.get(i).getNome());
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            System.out.println("Categoria nao encontrada!"); // Categoria não encontrada
         }
     }
 }
