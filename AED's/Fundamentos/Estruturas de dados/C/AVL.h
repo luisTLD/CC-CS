@@ -107,36 +107,36 @@ Node_AVL* balanceNode(Node_AVL* node)
 
 Node_AVL* rightRotate(Node_AVL* actual)
 {
-    Node_AVL* left = actual->left;         // O filho a esquerda de "actual"
-    Node_AVL* left_right = left->right;    // O filho a direita de "left"
+    Node_AVL* actual_left = actual->left;         // O filho a esquerda de "actual"
+    Node_AVL* actual_left_right = actual_left->right;    // O filho a direita de "left"
 
     // Realizando a rotação
-    left->right = actual;
-    actual->left = left_right;
+    actual_left->right = actual;
+    actual->left = actual_left_right;
 
     // Atualizando as alturas
     actual->height = 1 + maxSubHeight(actual);
-    left->height = 1 + maxSubHeight(left);
+    actual_left->height = 1 + maxSubHeight(actual_left);
 
     // Retornando o novo no raiz
-    return left;
+    return actual_left;
 }
 
 Node_AVL* leftRotate(Node_AVL* actual)
 {
-    Node_AVL* right = actual->right;        // O filho a direita de "actual"
-    Node_AVL* right_left = right->left;     // O filho a esquerda de "right"
+    Node_AVL* actual_right = actual->right;        // O filho a direita de "actual"
+    Node_AVL* actual_right_left = actual_right->left;     // O filho a esquerda de "right"
 
     // Realizando a rotação
-    right->left = actual;
-    actual->right = right_left;
+    actual_right->left = actual;
+    actual->right = actual_right_left;
 
     // Atualizando as alturas
     actual->height = 1 + maxSubHeight(actual);
-    right->height = 1 + maxSubHeight(right);
+    actual_right->height = 1 + maxSubHeight(actual_right);
 
     // Retornando o novo no raiz
-    return right;
+    return actual_right;
 }
 
 Node_AVL* leftRightRotate(Node_AVL* node)
