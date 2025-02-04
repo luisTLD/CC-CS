@@ -1,6 +1,6 @@
 # Inteligência Artificial - Algoritmos e Modelos
 
-Repositório para apoiar os estudos em IA, com as matérias vistas e estudadas até agora
+Repositório para apoiar os estudos em IA
 
 ## Algoritmos
 
