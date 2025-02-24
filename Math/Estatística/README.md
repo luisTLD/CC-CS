@@ -1,0 +1,14 @@
+## Tópicos Abordados
+- Conceitos Básicos e Aplicações
+- Estatística Descritiva
+- Medidas de Tendência Central e Variabilidade
+- Gráficos Estatísticos (Histograma, Box Plot)
+- Probabilidade e Regra de Bayes
+- Variáveis Aleatórias
+- Distribuições de Probabilidade
+- Inferência Estatística
+- Intervalos de Confiança
+- Testes de Hipóteses
+- Regressão Linear Simples
+- Correlação e Predição
+- Ajuste de Modelos Estatísticos
