@@ -5,7 +5,8 @@ Este repositório contém anotações sobre tópicos de Matemática que foram ap
 ## Conteúdo
 
 - **Geometria Analítica e Álgebra Linear (GAAL)**  
-- **Cálculo (Calc)**  
+- **Cálculo (Calc)**
+- **Estatística** 
 
 ## Observações
 
