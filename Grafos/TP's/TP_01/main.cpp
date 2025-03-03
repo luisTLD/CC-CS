@@ -5,7 +5,7 @@
 // Grafo Nao-Direcionado e simples
 // A B C D E F == 0 1 2 3 4 5
 
-// Utilziado matriz para acessar rapido uma aresta (Grafo para testar o algoritmo)
+// Utilziado matriz para acessar rapido uma aresta
 std::vector<std::vector<int>> adjacentMatrix =
 {
 //   A, B, C, D, E, F
@@ -34,11 +34,13 @@ int countCyclesFromVertexDFS(const int& startedVertex, int actualVertex, const i
 
 int main()
 {
-    std::cout << totalCyclesWithPermutations() << std::endl;
-    std::cout << totalCyclesWithDFS() << std::endl;
+    std::cout << "Permutations: " << totalCyclesWithPermutations() << std::endl;
+    std::cout << "DFS: " << totalCyclesWithDFS() << std::endl;
 
     return 0;
 }
+
+// -------------------------------------- DFS --------------------------------------
 
 int totalCyclesWithDFS()
 {
@@ -66,16 +68,20 @@ int countCyclesFromVertexDFS(const int& startedVertex, int actualVertex, const i
     
     for (int i = startedVertex + 1; i < totalVertex; i++)
     {
-        if (actualVertex == startedVertex)
-            secondVertex = i;
-
         if (!visitedVertex[i] && adjacentMatrix[actualVertex][i] == 1)
+        {
+            if (actualVertex == startedVertex)
+                secondVertex = i;
+
             cycleCount += countCyclesFromVertexDFS(startedVertex, i, totalVertex, walkSize + 1, visitedVertex, secondVertex);
+        }
     }
 
     visitedVertex[actualVertex] = false;
     return cycleCount;
 }
+
+// -------------------------------------- Permutations --------------------------------------
 
 int totalCyclesWithPermutations()
 {
@@ -99,6 +105,38 @@ int totalCyclesWithPermutations()
     return totalCycle;
 }
 
+std::vector<std::vector<int>> makePermutations(int totalElements, int groupSize)
+{
+    std::vector<std::vector<int>> finalGroup;
+    std::vector<int> actualGroup;
+    std::vector<bool> usedVertex(totalElements, false);
+    
+    makePermutationsRec(totalElements, groupSize, 0, actualGroup, finalGroup, usedVertex);
+    
+    return finalGroup;
+}
+
+void makePermutationsRec(const int& totalElements, const int& groupSize, int actualSize, std::vector<int>& actualGroup, std::vector<std::vector<int>>& finalGroup, std::vector<bool>& usedVertex)
+{
+    if (actualSize == groupSize)
+    {
+        finalGroup.push_back(actualGroup);
+        return;
+    }
+    
+    for (int i = 0; i < totalElements; i++)
+    {
+        if (!usedVertex[i])
+        {
+            actualGroup.push_back(i);
+            usedVertex[i] = true;
+            makePermutationsRec(totalElements, groupSize, actualSize + 1, actualGroup, finalGroup, usedVertex);
+            actualGroup.pop_back();
+            usedVertex[i] = false;
+        }
+    }
+}
+
 bool hasWalk(std::vector<int> vertex)
 {
     int size = vertex.size();
@@ -115,36 +153,4 @@ bool hasWalk(std::vector<int> vertex)
     }
 
     return true;
-}
-
-std::vector<std::vector<int>> makePermutations(int totalElements, int groupSize)
-{
-    std::vector<std::vector<int>> finalGroup;
-    std::vector<int> actualGroup;
-    std::vector<bool> usedVertex(totalElements, false);
-
-    makePermutationsRec(totalElements, groupSize, 0, actualGroup, finalGroup, usedVertex);
-
-    return finalGroup;
-}
-
-void makePermutationsRec(const int& totalElements, const int& groupSize, int actualSize, std::vector<int>& actualGroup, std::vector<std::vector<int>>& finalGroup, std::vector<bool>& usedVertex)
-{
-    if (actualSize == groupSize)
-    {
-        finalGroup.push_back(actualGroup);
-        return;
-    }
-
-    for (int i = 0; i < totalElements; i++)
-    {
-        if (!usedVertex[i])
-        {
-            actualGroup.push_back(i);
-            usedVertex[i] = true;
-            makePermutationsRec(totalElements, groupSize, actualSize + 1, actualGroup, finalGroup, usedVertex);
-            actualGroup.pop_back();
-            usedVertex[i] = false;
-        }
-    }
 }
