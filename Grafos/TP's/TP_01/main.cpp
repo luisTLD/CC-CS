@@ -50,7 +50,6 @@ int totalCyclesWithDFS()
     for (int i = 0; i < totalVertex - 2; i++)
     {
         std::vector<bool> visitedVertex(totalVertex, false);
-        std::vector<int> actualWalk;
         int secondVertex = -1;
         totalCycle += countCyclesFromVertexDFS(i, i, totalVertex, 1, visitedVertex, secondVertex);
     }
