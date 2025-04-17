@@ -1,0 +1,13 @@
+.faixa-roxa {
+    background-color: #6f42c1;
+    color: white;
+    max-width: 1320px;
+    margin: 0 auto;
+    transition: border-radius 0.3s ease;
+}
+
+@media (min-width: 1321px) {
+    .faixa-roxa {
+        border-radius: 0.75rem;
+    }
+}
