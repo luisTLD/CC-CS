@@ -1,10 +1,11 @@
-# Redes Neurais
+# Redes Neurais em Python
+
+Implementações manuais de:
 
 - **Perceptron**
 - **Backpropagation**
 
-Portas lógicas:
+Com visualizações gráficas dos resultados.
 
-- AND  
-- OR  
-- XOR
+Exemplos com portas lógicas:  
+AND, OR, XOR
