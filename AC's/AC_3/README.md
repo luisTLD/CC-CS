@@ -1,5 +1,4 @@
 # Arquitetura de Computadores - Conteúdos da Disciplina
-
 Repositório com os principais tópicos estudados na disciplina de Arquitetura de Computadores.
 
 ## Introdução à Disciplina
@@ -13,10 +12,6 @@ Repositório com os principais tópicos estudados na disciplina de Arquitetura d
 ## Pipeline de Instruções
 - Revisão de monociclo e multiciclo
 - Conceitos de pipeline de instruções
-  - Pipeline (Parte 1)
-  - Pipeline (Parte 2)
-  - Pipeline (Parte 3)
-  - Exercícios de pipeline
 
 ## Superescalaridade e Execução de Instruções
 - Conceitos de superescalaridade
@@ -33,4 +28,3 @@ Repositório com os principais tópicos estudados na disciplina de Arquitetura d
 - Taxonomia de Flynn
 - Classificação de arquiteturas paralelas
 - Compartilhamento de memória em arquiteturas paralelas
-
