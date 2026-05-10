@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+service DatabaseService {
+
+  rpc Put (PutRequest) returns (PutResponse);
+
+  rpc Get (GetRequest) returns (GetResponse);
+
+  rpc Replicate (ReplicationRequest) returns (ReplicationResponse);
+}
+
+message PutRequest {
+  string key = 1;
+  string value = 2;
+  int32 timestamp = 3;
+}
+
+message PutResponse {
+  string message = 1;
+  int32 timestamp = 2;
+}
+
+message GetRequest {
+  string key = 1;
+  int32 timestamp = 2;
+}
+
+message GetResponse {
+  string value = 1;
+  int32 timestamp = 2;
+}
+
+message ReplicationRequest {
+  string key = 1;
+  string value = 2;
+  int32 timestamp = 3;
+}
+
+message ReplicationResponse {
+  string message = 1;
+}
