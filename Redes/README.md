@@ -45,6 +45,7 @@
 - Gateway
 - NAT
 - DHCP
+
 ## Protocolos de Rede
 
 - IP
