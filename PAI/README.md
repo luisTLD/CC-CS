@@ -1,6 +1,7 @@
 # Processamento e Análise de Imagens (PAI)
 
-1. FUNDAMENTOS
+# 1. FUNDAMENTOS
+
 ## Processamento de Imagens
 Manipulação de imagens para:
 - melhorar qualidade
@@ -40,7 +41,9 @@ Pipeline comum:
 Imagem → Pré-processamento → Segmentação →
 Extração de características → Classificação
 
-2. AQUISIÇÃO E REPRESENTAÇÃO
+---
+
+# 2. AQUISIÇÃO E REPRESENTAÇÃO
 
 ## Aquisição de Imagens
 Captura da imagem por:
@@ -93,7 +96,9 @@ Representação baseada em:
 Vantagem:
 - facilita segmentação por cor
 
-3. HISTOGRAMAS E REALCE
+---
+
+# 3. HISTOGRAMAS E REALCE
 
 ## Histograma
 Distribuição das intensidades da imagem.
@@ -123,8 +128,10 @@ Aplicações:
 - imagens médicas
 - visão noturna
 - iluminação irregular
-  
-4. CONVOLUÇÃO E FILTRAGEM
+
+---
+
+# 4. CONVOLUÇÃO E FILTRAGEM
 
 ## Convolução
 Operação usada para aplicar filtros na imagem.
@@ -160,7 +167,9 @@ Aplicação sequencial de múltiplos filtros.
 Exemplo:
 - suavização antes da detecção de bordas
 
-5. BORDAS E DERIVADAS
+---
+
+# 5. BORDAS E DERIVADAS
 
 ## Bordas
 Mudanças bruscas de intensidade.
@@ -216,8 +225,10 @@ Etapas:
 Vantagens:
 - alta precisão
 - menos falsas bordas
-  
-6. SEGMENTAÇÃO
+
+---
+
+# 6. SEGMENTAÇÃO
 
 ## Segmentação
 Separação da imagem em regiões relevantes.
@@ -225,7 +236,7 @@ Separação da imagem em regiões relevantes.
 Objetivo:
 - separar objetos
 - identificar regiões
-  
+
 ## Limiarização
 Segmentação baseada em intensidade.
 
@@ -249,6 +260,64 @@ Segmentação baseada em bordas.
 Usada quando:
 - contornos são bem definidos
 
+## Segmentação por Snake (Active Contour)
+Contorno deformável que evolui até aderir às bordas do objeto.
+
+Usado para:
+- rastrear contornos complexos
+- detectar estruturas curvas
+- segmentação médica
+
+Vantagem:
+- acompanha curvas e formas irregulares
+
+Desvantagem:
+- depende da inicialização do contorno
+
+## Skeletonization
+Reduz objetos binários ao seu esqueleto central.
+
+Resultado:
+- representação fina da estrutura
+
+Usado para:
+- análise de formas
+- extração de linhas centrais
+- grafos
+- rastreamento estrutural
+
+Vantagem:
+- preserva conectividade
+
+Desvantagem:
+- sensível a ruído
+
+## Path Tracking
+Rastreamento de caminhos conectados na imagem.
+
+Usado para:
+- seguir linhas contínuas
+- vasos sanguíneos
+- estradas
+- trilhas
+- estruturas curvas
+
+Pode utilizar:
+- BFS
+- DFS
+- grafos
+- menor caminho
+
+## Skeletonization + Path Tracking
+Combinação usada para:
+- encontrar linhas centrais contínuas
+- rastrear estruturas curvas de cima para baixo
+- eliminar bordas redundantes
+
+Pipeline comum:
+Segmentação → Skeletonization →
+Construção do grafo → Path Tracking
+
 ## Transformada de Hough
 Detecta formas geométricas.
 
@@ -258,7 +327,26 @@ Aplicações:
 - pistas
 - estruturas geométricas
 
-7. MORFOLOGIA MATEMÁTICA
+## Hough Transform Adaptada
+Versão modificada da Hough tradicional para detectar:
+- curvas
+- linhas incompletas
+- estruturas deformadas
+
+Usada quando:
+- a linha não é reta
+- existem falhas na borda
+- há ruído elevado
+
+Aplicações:
+- rastreamento de estradas
+- vasos sanguíneos
+- fibras
+- linhas curvas contínuas
+
+---
+
+# 7. MORFOLOGIA MATEMÁTICA
 
 ## Morfologia Matemática
 Opera sobre formas e estruturas da imagem.
@@ -292,8 +380,20 @@ Dilatação seguida de erosão.
 Usada para:
 - fechar buracos
 - unir regiões próximas
-  
-8. DOMÍNIO ESPACIAL E FREQUÊNCIA
+
+## Thinning
+Redução iterativa da espessura de objetos binários.
+
+Usado para:
+- preparação para skeletonization
+- redução de largura das estruturas
+
+Vantagem:
+- preserva conectividade
+
+---
+
+# 8. DOMÍNIO ESPACIAL E FREQUÊNCIA
 
 ## Domínio Espacial
 Operações realizadas diretamente nos pixels.
@@ -308,7 +408,9 @@ Alta frequência:
 - bordas
 - detalhes
 
-9. FOURIER E TRANSFORMADAS
+---
+
+# 9. FOURIER E TRANSFORMADAS
 
 ## Série de Fourier
 Representa sinais periódicos através de componentes senoidais.
@@ -332,7 +434,9 @@ Algoritmo rápido para calcular DFT.
 Vantagem:
 - reduz custo computacional
 
-10. FILTRAGEM NO DOMÍNIO DA FREQUÊNCIA
+---
+
+# 10. FILTRAGEM NO DOMÍNIO DA FREQUÊNCIA
 
 ## Filtro Passa-Baixa
 Mantém baixas frequências.
@@ -360,7 +464,9 @@ Suaviza transições na frequência.
 Usado para:
 - reduzir artefatos
 
-11. REPRESENTAÇÃO DE PADRÕES
+---
+
+# 11. REPRESENTAÇÃO DE PADRÕES
 
 ## Descritores
 Transformam imagem em vetor de características.
@@ -383,8 +489,10 @@ Exemplos:
 - rugosidade
 - repetição
 - direção
-  
-12. CLASSIFICAÇÃO
+
+---
+
+# 12. CLASSIFICAÇÃO
 
 ## Classificação
 Determina a classe de um padrão.
@@ -400,7 +508,9 @@ Baseados em regras fixas.
 ## Classificadores Probabilísticos
 Baseados em probabilidade.
 
-13. APRENDIZADO DE MÁQUINA
+---
+
+# 13. APRENDIZADO DE MÁQUINA
 
 ## Perceptron
 Modelo simples de neurônio artificial.
@@ -452,7 +562,9 @@ Vantagem:
 Desvantagem:
 - necessita grande volume de dados
 
-14. APLICAÇÕES
+---
+
+# 14. APLICAÇÕES
 
 ## OCR
 Reconhecimento automático de caracteres.
@@ -480,7 +592,9 @@ Detecta:
 - falhas
 - peças fora do padrão
 
-15. QUANDO USAR CADA TÉCNICA
+---
+
+# 15. QUANDO USAR CADA TÉCNICA
 
 Ruído:
 - Média
@@ -495,14 +609,26 @@ Detectar bordas:
 - Laplaciano
 - Canny
 
-Detectar linhas e círculos:
+Detectar linhas retas:
 - Hough
+
+Detectar linhas curvas:
+- Snake
+- Skeletonization + Path Tracking
+- Hough Adaptada
 
 Separar objeto do fundo:
 - Limiarização
 
 Remover pequenos ruídos:
 - Morfologia
+
+Extrair linha central:
+- Skeletonization
+- Thinning
+
+Rastrear estruturas contínuas:
+- Path Tracking
 
 Realçar detalhes:
 - Passa-alta
