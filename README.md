@@ -1,3 +1,5 @@
 # CC-CS 💻
 
-- Anotações e materiais de estudo utilizados para preparar para reforçar o entendimento dos conceitos teóricos.
+Base pessoal de conhecimento contendo resumos, anotações e referências sobre tópicos de Ciência da Computação.
+
+READMEs para consulta rápida para auxiliar na revisão de conteúdo já estudado.
