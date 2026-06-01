@@ -1,264 +1,294 @@
-# Computação Paralela
+# COMPUTAÇÃO PARALELA
 
-# 1. FUNDAMENTOS
+## FUNDAMENTOS
 
-## Computação Paralela
-Execução simultânea de múltiplas operações.
+### Computação Paralela
+- Execução simultânea
+- Desempenho
+- Throughput
+- Escalabilidade
 
-Objetivos:
-- acelerar processamento
-- dividir trabalho
-- aumentar desempenho
+### Concorrência
+- Interleaving
+- Compartilhamento de recursos
 
-## Paralelismo de Dados
-Mesmo processamento aplicado em vários dados.
+### Paralelismo
+- Execução simultânea real
 
-## Paralelismo de Tarefas
-Tarefas diferentes executadas simultaneamente.
+### Paralelismo de Dados
+- Particionamento de dados
+- Mesmo fluxo de execução
 
----
-
-# 2. MODELOS E PADRÕES
-
-## FORK-JOIN
-Divide tarefas e sincroniza ao final.
-
-## MAP
-Aplica operação em múltiplos elementos.
-
-## REDUCE
-Combina múltiplos valores em um resultado.
-
-Exemplos:
-- soma
-- máximo
-- média
-
-## SCAN
-Soma prefixada acumulativa.
-
-## PIPELINE
-Execução em estágios sequenciais paralelos.
-
-## DIVIDE & CONQUER
-Divide problema em subproblemas menores.
+### Paralelismo de Tarefas
+- Tarefas independentes
+- Fluxos distintos
 
 ---
 
-# 3. THREADS E OPENMP
+## PADRÕES PARALELOS
 
-## OpenMP
-API de paralelismo para CPU.
+### Fork-Join
+- Decomposição
+- Sincronização final
 
-Baseado em:
-- diretivas
-- threads
-- memória compartilhada
+### Map
+- Transformação paralela
 
-## Paralelismo com Threads
-Execução simultânea de fluxos de execução.
+### Reduce
+- Agregação
+- Operação associativa
 
-## Região Paralela
-Bloco executado por múltiplas threads.
+### Scan
+- Prefix Sum
+- Dependência parcial
 
-## Seção Crítica
-Região com acesso exclusivo.
+### Pipeline
+- Paralelismo por estágios
 
-## Sincronização
-Controle de execução entre threads.
-
-## Barreira
-Sincroniza todas as threads.
-
-## Race Condition
-Conflito de acesso concorrente.
-
-## Balanceamento de Carga
-Distribuição equilibrada de trabalho.
-
-## Paralelismo de Tarefas
-Execução paralela de tarefas independentes.
+### Divide & Conquer
+- Decomposição recursiva
 
 ---
 
-# 4. ARQUITETURAS PARALELAS
+## THREADS E OPENMP
 
-## Arquiteturas Paralelas
-Sistemas com múltiplas unidades de processamento.
+### Thread
+- Unidade de execução
 
-## Multicore
-Múltiplos núcleos em uma CPU.
+### OpenMP
+- Memória compartilhada
+- Diretivas
+- Runtime
 
-## Manycore
-Grande quantidade de núcleos paralelos.
+### Região Paralela
+- Criação de equipe de threads
 
-## CPU
-Processamento geral e controle.
+### Worksharing
+- Distribuição de trabalho
 
-## GPU
-Processamento massivamente paralelo.
+### Tasking
+- Paralelismo baseado em tarefas
 
-## Hierarquia de Memória
-Organização da memória por níveis.
+### Critical
+- Exclusão mútua
 
-Tipos:
-- registradores
-- cache
-- RAM
-- memória global
+### Atomic
+- Operação indivisível
 
----
+### Barrier
+- Sincronização coletiva
 
-# 5. DESEMPENHO
+### Reduction
+- Acumulação paralela
 
-## Avaliação de Desempenho
-Análise da eficiência paralela.
+### Race Condition
+- Acesso concorrente não sincronizado
 
-## Speedup
-Comparação entre execução serial e paralela.
+### Deadlock
+- Espera circular
 
-## Eficiência
-Aproveitamento dos processadores.
+### Load Balancing
+- Distribuição uniforme
 
-## Escalabilidade
-Capacidade de aumentar desempenho com mais recursos.
-
-## Gargalo
-Parte que limita desempenho.
-
-## Overhead
-Custo adicional do paralelismo.
+### Scheduling
+- Static
+- Dynamic
+- Guided
 
 ---
 
-# 6. ALGORITMOS PARALELOS
+## ARQUITETURAS
 
-## Algoritmos Paralelos
-Algoritmos executados simultaneamente.
+### SISD
 
-Características:
-- divisão de tarefas
-- sincronização
-- comunicação
+### SIMD
 
-## Dependência de Dados
-Quando uma operação depende de outra.
+### MISD
 
-## Granularidade
-Quantidade de trabalho por tarefa.
+### MIMD
 
----
+### CPU
+- Baixa latência
+- Controle complexo
 
-# 7. SIMD E VETORIZAÇÃO
+### GPU
+- Alto throughput
+- Paralelismo massivo
 
-## SIMD
-Single Instruction Multiple Data.
+### Multicore
 
-Mesma instrução aplicada em vários dados.
+### Manycore
 
-## Vetorização
-Execução vetorial de operações.
-
-Aplicações:
-- matrizes
-- imagens
-- álgebra linear
-
-## Processamento Vetorial
-Uso de registradores vetoriais.
+### NUMA
+- Localidade de memória
 
 ---
 
-# 8. GPU E CUDA
+## MEMÓRIA
 
-## Programação em GPU
-Execução paralela massiva na GPU.
+### Registradores
 
-## CUDA
-Plataforma de programação da NVIDIA.
+### Cache
 
-## OpenMP para GPU
-Uso de diretivas OpenMP em GPU.
+### RAM
 
-## Arquitetura de GPU
-Baseada em milhares de threads paralelas.
+### Localidade Temporal
 
-## Modelo de Execução CUDA
-Organização em:
-- grids
-- blocos
-- threads
+### Localidade Espacial
 
-## Thread
-Menor unidade de execução.
+### Cache Miss
 
-## Bloco
-Conjunto de threads.
-
-## Warp
-Grupo de threads executadas juntas.
+### False Sharing
+- Compartilhamento de linha de cache
 
 ---
 
-# 9. MEMÓRIA EM GPU
+## DESEMPENHO
 
-## Memória Global
-Grande capacidade e maior latência.
+### Tempo de Execução
 
-## Memória Compartilhada
-Memória rápida compartilhada entre threads do bloco.
+### Speedup
 
-## Memória Local
-Privada para cada thread.
+### Eficiência
 
-## Registradores
-Memória mais rápida da GPU.
+### Escalabilidade
 
-## Hierarquia de Memória em GPU
-Organização dos tipos de memória da GPU.
+### Overhead
 
----
+### Gargalo
 
-# 10. PADRÕES EM GPU
+### Lei de Amdahl
+- Fração serial
 
-## REDUCE em GPU
-Redução paralela de valores.
-
-## SCAN em GPU
-Soma prefixada paralela.
-
-## Paralelismo Massivo
-Grande quantidade de threads simultâneas.
+### Lei de Gustafson
+- Escalonamento do problema
 
 ---
 
-# 11. MPI
+## ALGORITMOS PARALELOS
+
+### Decomposição
+
+### Dependência de Dados
+
+### Comunicação
+
+### Sincronização
+
+### Granularidade
+
+### Escalonamento
+
+---
+
+## SIMD E VETORIZAÇÃO
+
+### SIMD
+- Data-level parallelism
+
+### Vetorização
+- Instruções vetoriais
+
+### AVX
+
+### AVX2
+
+### AVX-512
+
+### Auto-Vectorization
+
+---
+
+## CUDA E GPU
+
+### CUDA
+
+### Kernel
+
+### Thread
+
+### Block
+
+### Grid
+
+### Warp
+- Unidade de escalonamento
+
+### Occupancy
+
+### Warp Divergence
+
+### Coalesced Access
+
+---
+
+## MEMÓRIA EM GPU
+
+### Registradores
+
+### Shared Memory
+
+### Local Memory
+
+### Global Memory
+
+### Constant Memory
+
+### Texture Memory
+
+### Hierarquia de Memória
+
+---
+
+## PADRÕES EM GPU
+
+### Reduction
+
+### Scan
+
+### Tiling
+
+### Stencil
+
+### Paralelismo Massivo
+
+---
 
 ## MPI
-Message Passing Interface.
 
-Modelo baseado em múltiplos processos.
+### MPI
+- Memória distribuída
 
-## Comunicação entre Processos
-Troca de dados entre processos distribuídos.
+### Processo
 
-## Send / Receive
-Envio e recebimento de mensagens.
+### Rank
 
-## Broadcast
-Um processo envia dados para todos.
+### Communicator
 
-## Scatter
-Distribui partes dos dados.
+### Point-to-Point
 
-## Gather
-Reúne dados dos processos.
+### Send
 
-## Pipeline em MPI
-Execução distribuída em estágios.
+### Receive
 
-## Cluster
-Conjunto de máquinas conectadas.
+### Broadcast
 
-## Memória Distribuída
-Cada processo possui memória própria.
+### Scatter
+
+### Gather
+
+### Reduce
+
+### AllReduce
+
+### Barrier
+
+### Comunicação Bloqueante
+
+### Comunicação Não Bloqueante
+
+### Cluster
+
+### Latência
+
+### Bandwidth
