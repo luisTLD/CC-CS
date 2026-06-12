@@ -1,5 +1,8 @@
 # COMPUTAÇÃO PARALELA
 
+## Trabalho - Kmeans_paralelo
+https://github.com/luisTLD/Kmeans-parallel
+
 ## FUNDAMENTOS
 
 ### Computação Paralela
