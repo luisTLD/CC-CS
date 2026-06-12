@@ -1,7 +1,5 @@
 # Inteligência Artificial - Algoritmos e Modelos
 
-Repositório para apoiar os estudos em IA
-
 ## Algoritmos
 
 ### Aprendizado Supervisionado
