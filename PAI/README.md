@@ -1,5 +1,8 @@
 # Processamento e Análise de Imagens (PAI)
 
+## Trabalho Pratico:
+- https://github.com/luisTLD/mammography-cnn
+- 
 # 1. FUNDAMENTOS
 
 ## Processamento de Imagens
