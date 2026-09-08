@@ -1,5 +1,10 @@
 # Redes de Computadores
 
+## Projeto Desenvolvido
+
+Repositório do projeto:
+https://github.com/penchel/tp_redes
+
 ## Fundamentos
 
 - Redes de Computadores
@@ -89,9 +94,3 @@
 - Switch
 - Hub
 - Access Point
-
-## Projeto Desenvolvido
-
-Repositório do projeto:
-https://github.com/penchel/tp_redes
-

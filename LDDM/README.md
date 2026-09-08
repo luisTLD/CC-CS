@@ -1,5 +1,12 @@
 # LDDM (Laboratório de Desenvolvimento para Dispositivos Móveis)
 
+## Projeto Desenvolvido
+
+QuickCheck
+
+Repositório do projeto:
+https://github.com/luisTLD/QuickCheck
+
 ### Ambientes e Ferramentas de Desenvolvimento para Dispositivos Móveis
 Estudo das principais plataformas e ferramentas utilizadas no desenvolvimento mobile, incluindo:
 - Android Studio
@@ -31,11 +38,3 @@ Conceitos relacionados à computação presente no cotidiano:
 - Context-aware computing
 - Integração entre dispositivos
 - Mobilidade e conectividade
-
-## Projeto Desenvolvido
-
-QuickCheck
-
-Repositório do projeto:
-https://github.com/luisTLD/QuickCheck
-

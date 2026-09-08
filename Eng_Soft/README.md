@@ -1,5 +1,12 @@
 # Projeto de Software - Fundamentos e Práticas
 
+## Projeto Desenvolvido
+
+Denun
+
+Repositório do projeto:
+https://github.com/luisTLD/Denun
+
 ## Fundamentos
 
 - **Introdução a Projeto de Software** - Conceitos básicos, ciclo de vida e importância do planejamento no desenvolvimento.
@@ -31,10 +38,3 @@
 - **Padrões Arquiteturais** - Estruturas amplas para organização de sistemas (ex: MVC, camadas).
 
 - **Frameworks e Reuso** - Uso de bibliotecas e estruturas prontas para acelerar o desenvolvimento.
-
-## Projeto Desenvolvido
-
-Denun
-
-Repositório do projeto:
-https://github.com/luisTLD/Denun
